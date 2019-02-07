@@ -19,18 +19,25 @@ var session = require('express-session');
 var auth = require('./routes/auth');
 //var request = require('request');
 
-var certOptions = {
-  key: fs.readFileSync(path.resolve('./server.key')),
-  cert: fs.readFileSync(path.resolve('./server.crt'))
-}
+
 
 var app = express();
 
 var httpServer = http.createServer(app);
-var httpsServer = https.createServer(certOptions, app);
+
 
 //Set up default mongoose connection
-var mongoDB = 'mongodb://127.0.0.1/virtavaalit';
+if (process.env.NODE_ENV == "production"){
+	var mongoDB = 'mongodb://virtavesivaalit:KaksitoistaR3kkaa@gettingstarted-shard-00-00-1zvns.mongodb.net:27017,gettingstarted-shard-00-01-1zvns.mongodb.net:27017,gettingstarted-shard-00-02-1zvns.mongodb.net:27017/virtavaalit?ssl=true&replicaSet=GettingStarted-shard-0&authSource=admin&retryWrites=true';
+}else{
+	var certOptions = {
+	  key: fs.readFileSync(path.resolve('./server.key')),
+	  cert: fs.readFileSync(path.resolve('./server.crt'))
+	}
+	var httpsServer = https.createServer(certOptions, app);
+	var mongoDB = 'mongodb://127.0.0.1/virtavaalit';
+}
+
 mongoose.connect(mongoDB);
 // Get Mongoose to use the global promise library
 mongoose.Promise = global.Promise;
@@ -98,7 +105,12 @@ app.use(function(err, req, res, next) {
   res.render('error');
 });
 
-httpServer.listen(8080);
-httpsServer.listen(8443);
+
+if(NODE_ENV == "production"){
+	httpServer.listen(process.env.PORT || 8080);
+}else{
+	httpsServer.listen(8443);
+}
+
 
 module.exports = app;

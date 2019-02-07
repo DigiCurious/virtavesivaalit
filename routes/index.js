@@ -18,7 +18,7 @@ router.get('/', function(req, res) {
   	if(err){
   		console.log(err)
   	}else{
-  		console.log(ehdokkaat[3].kuva);
+  		//console.log(ehdokkaat[3].kuva);
   		res.render("index", { ehdokkaat: ehdokkaat})
   	}
   });
