@@ -1,0 +1,113 @@
+extends layout
+
+block content
+  .main.container
+    .jumbotron.jumbtron-fluid
+      .container
+        h1.display-4 VIRTAVESIVAALIT
+        p.lead.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+        .container#logot
+          .row
+            .col-md-2
+              img#logo(src="https://pbs.twimg.com/profile_images/887043027868536832/uw7gOmkU_400x400.jpg")
+            .col-md-2
+              img#logo(src="https://upload.wikimedia.org/wikipedia/fi/3/33/SuomenVapaa-ajankalastajienKeskusjarjesto.jpg")
+    .row
+      .col-md-8.col-md-offset-3
+        img#profiili(src=url)
+        form(method='POST' action='/register')
+          input.form-control(type='hidden' id='kuva' value=url placeholder=url name='kuva')
+          div.form-group
+            label(for='nimi') Nimi
+            input.form-control(type='text' id='nimi' value=user.name placeholder=user.name name='nimi')
+          div.form-group
+            label(for='puolue') Puolue
+            select.form-control(type='select' id='puolue' name='puolue')
+              option SDP
+              option Kokoomus
+              option Vihreät
+              option Vasemmisto
+              option RKP
+              option Keskusta
+              option PS
+              option Siniset
+          div.form-group
+            label(for='vaalipiiri') Vaalipiiri
+            select.form-control(type='select' id='vaalipiiri' name='vaalipiiri')
+              option Uusimaa
+              option Varsinais-Suomi
+              option Satakunta
+              option Pirkanmaa
+              option Keskisuomi
+              option Karjala
+              option Lappi
+              option Pohjanmaa
+          .teesi
+            p#teesi.
+               Haluan Vesilain uudistettavaksi tulevalla hallituskaudella, jotta vaelluskalojen ja muun vesiluonnon elinvoimaisuutta voidaan tehokkaammin edistää.
+            p.
+              Taustaa: Varsinais-Suomen ELY-keskuksen teettämän selvityksen mukaan Suomen sisävesistä
+              löytyy 50 vesivoimalaa, joille ei ole luvissa määrätty minkäänlaisia kalatalousvelvoitteita, eli
+              kompensaatiota kalakannoille ja kalastukselle aiheutetusta haitasta. Velvoitetta ei tällöin voida vastoin luvan haltijan suostumusta määrätä niihin jälkikäteen. Tämä epäkohta voidaan korjata Vesilakia muuttamalla. Lakimuutoksen tulee myös velvoittaa luvan haltijan maksamaan sille määrätyn kalatien, jos vesistön patoamisesta ja säännöstelystä aiheutuu vahinkoa uhanalaisille kalakannoille. Vesivoimaloiden luvat ovat maailmalla tyypillisesti määräaikaisia. Suomessa vesivoimaloiden
+              luvat ovat nykyisen vesilainsäädännön mukaisesti ikuisia. Kun luvista tehdään Vesilain uudistuksessa yleisen mallin mukaisesti määräaikaisia, voidaan niihin helpommin soveltaa uutta, luvan myöntämisen jälkeen syntynyttä lainsäädäntöä, kuten EU:n Vesipuitedirektiivin ja vaatimuksia ja uusitun kalastuslain tavoitteita.
+            div.form-group
+              label(for='vaalipiiri')
+              select.form-control(type='select' id='puolue' placeholder='email' name='teesi1')
+                option kyllä
+                option ei
+          .teesi
+            p#teesi.
+               Haluan seuraavaan hallitusohjelmaan tavoitteeksi pienvesivoimaloiden (< 10 MW)
+               toiminnan hallitun alasajon, aloittaen minivesivoimaa (< 1MW) tuottavista laitoksista
+            p.
+              Taustaa: 40 prosenttia Suomen aktiivisista vesivoimaloista on tuotannoltaan alle 1 MW
+              laitoksia. Niiden yhteenlaskettu sähköntuotanto on yksi prosentti vesivoimalla tuotettavasta sähköstä. Tämä on vain 0,2% koko Suomen vuosittaisesta sähköntuotannosta. Marginaalisen sähköntuotantokapasiteetin lisäksi, ’tippavoimalat’ eivät myöskään osallistu ns. säätövoiman
+              tuottamiseen, vaan niiden sähköntuotanto on suoraan suhteessa joen virtaamaan. Pienten vesivoimaloiden ja niiden yhteydessä olevien patojen ympäristövaikutukset voivat olla erittäin
+              merkittäviä varsinkin suhteessa niiden tuottamaan energiahyötyyn. Voimaloiden huolto- ja korjaustoimenpiteisiin ja tehonkorotuksiin kohdistetaan silti edelleen valtion tukia. Pienen voimalapadon purkaminen palauttaisi entisen tuhotun koskiympäristön palautumisen ennalleen ja olisi
+              huomattavasti parempi ratkaisu vaelluskalojen elinkierrolle kuin kalatie. Vesien hyvän ekologisen tilan saavuttaminen (vuoteen 2027 mennessä) vaatii kansallisen patojenpurkuohjelman.
+            div.form-group
+              label(for='vaalipiiri')
+              select.form-control(type='select' id='puolue' name='teesi2')
+                option kyllä
+                option ei
+          .teesi
+            p#teesi.
+               Haluan että pienehköjen (10-20 MW), keskikokoisten (20-60 MW) ja suurten (< 100 MW) vesivoimaloidemme voimassa olevien kalatalousvelvoitteiden ajanmukaistamista tehostetaan huomattavasti seuraavan hallituskauden aikana. Voimaloiden vanhat istutusvelvoitteet on muutettava kalojen luontaista elinkiertoa tukeviksi toimenpiteiksi. Jo käynnistyneet velvoitteiden muutokset (mm. Kemijoki ja Iijoki) on saatettava loppuun
+               välittömästi. Hallitusohjelmaan tulee tehdä kirjaus voimaloiden vesitalouslupiin lisättävistä kalan kulun mahdollistavista ratkaisuista ja kompensaatiotoimista vesivoiman vuoksi menetettyjen kalojen lisääntymisalueiden osalta, siltä osin kuin ne niistä puuttuvat.
+            p.
+              Taustaa: Vanhojen voimaloiden kalatalousvelvoitteet ovat pääsääntöisesti kalojen istutuksia.
+              Luvissa määrättyjä kalatalousvelvoitteita voidaan nykyisen vesilain puitteissa vaatia tarkistettavaksi, mikäli olosuhteet ovat merkittävästi muuttuneet. Näitä rakentamisen jälkeen tapahtuneita olosuhteiden muutoksia ovat mm. virtavesilajiston ja -elinympäristöjen merkittävä uhanalaistuminen, uusi kansallinen ja EU-lainsäädäntö ja useat kansalliset strategiat jotka tähtäävät vaelluskalakantojen elvyttämiseen. Lisäksi Suomea velvoittaa joukko kansainvälisiä sopimuksia, mm. biologisen monimuotoisuuden heikentämisen
+              pysäyttämisestä (YK:n Biodiversiteettisopimus). Kemijoen ja Iijoen kalatalousvelvoitteiden päivitys aloitettiin jo noin kaksi vuotta sitten ja prosessin eteneminen on ollut hidasta.
+            div.form-group
+              label(for='vaalipiiri')
+              select.form-control(type='select' id='puolue' name='teesi3')
+                option kyllä
+                option ei
+          .teesi
+            p#teesi.
+               Haluan viranomaispakkokeinojen soveltamista voimassa olevien, mutta toteuttamatta jääneiden kalatien rakentamisvelvoitteiden toimeenpanon edistämiseksi. Lisäksi haluan, että viranomaiset ryhtyvät vaatimaan kalateitä kalatien salliviin velvoitteisiin.
+            p.
+              Taustaa: Pienvesivoimayhtiöt eivät ole toteuttaneet niille määrättyjä kalatievelvoitteita ja viranomaiset eivät liioin ole ryhtyneet vaatimaan niihin kalateiden rakentamista ilmenee Varsinais-Suomen ELY-keskuksen teettämästä selvityksestä. Velvoitteiden toteuttamatta
+              jättäminen on hidastanut uhanalaisten vaelluskalojen palauttamista padottuihin jokiin. Selvitykseen saatiin tiedot 50:stä voimalaitoksesta, joilla on velvoite rakentaa kalatie tai sallia
+              sen rakentaminen viranomaisen niin esittäessä. Kalateitä on kuitenkin rakennettu vain yhdeksän ja niistäkin viisi yhteiskunnan varoin. Selvityksessä tarkasteltujen alle 5 MW vesivoimaloiden osuus Suomen vesivoiman tuotannosta on viisi prosenttia.
+            div.form-group
+              label(for='vaalipiiri')
+              select.form-control(type='select' id='puolue' name='teesi4')
+                option kyllä
+                option ei
+          .teesi
+            p#teesi.
+              Haluan että vaelluskalojen palauttaminen säilyy myös tulevan hallituksen
+              ’kärkitavoitteissa’, ja että uhanalaisten kalojen elvyttämiseen vaadittavat toimet ulotetaan koskemaan myös kalastuspolitiikkaamme (liialliseen verkkomäärään puuttuminen, uudet biologisesti merkityksellisemmät kalojen alamitat, kestävät kalastuskiintiöt jne). Elinympäristönä virtavesien ennallistamiselle tulee asettaa kunnianhimoiset kansalliset
+              tavoitteet.
+            p.
+              Taustaa: Luonnontilaiset virtavedet ovat elinympäristönä uhanalaisia Etelä-Suomessa. Uuden kalastuslain mukainen siirtyminen istutuskeskeisestä kalakantojen hoidosta kalakantojen luontaisen
+              elinkierron palauttamiseen, vaatii laajamittaisia ennallistamistoimia, joihin tulee suunnata lisäresursseja mm. Euroopan Meri- ja kalatalousrahaston rahoituksen kautta sekä suuntaamalla lisäresursseja ELY-keskusten kalataloudellisiin määrärahoihin. Kalastuslain toimeenpanon kautta
+              (kalatalousalueiden käyttö- ja hoitosuunnitelmat) kalastus tulee järjestää varsinkin seisovien pyydysten osalta niin että rajoitukset tukevat uhanalaisten kalakantojen palauttamisyrityksiä.
+          div.form-group
+            label(for='vaalipiiri')
+            select.form-control(type='select' id='puolue' name='teesi5')
+              option kyllä
+              option ei
+          button.btn.btn-primary(type='submit') Ilmoittaudu mukaan

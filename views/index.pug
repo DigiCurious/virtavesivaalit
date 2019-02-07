@@ -1,0 +1,24 @@
+extends layout
+
+block content
+	.jumbotron.jumbtron-fluid
+		.container
+			h1.display-4 VIRTAVESIVAALIT
+			.row
+				.container#logot
+					.col-md-2
+						img#logo(src="https://pbs.twimg.com/profile_images/887043027868536832/uw7gOmkU_400x400.jpg")
+			p.lead.
+				Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			a.btn.btn-primary.btn-lg(href="#" role="button") Lähde mukaan!
+
+	.container
+		each ehdokas in ehdokkaat
+			.col-md-1.col-md-offset-3
+				img#index(src=ehdokas.kuva)
+				p#ehdokas=ehdokas.name + ", " + ehdokas.puolue + ", " + ehdokas.vaalipiiri
+				each teesi in ehdokas.teesit
+						if ehdokas.teesi == "kyllä"
+								span.glyphicon.glyphicon-ok
+						else
+								span.glyphicon.glyphicon-remove

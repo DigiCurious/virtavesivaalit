@@ -1,0 +1,14 @@
+[req]
+default_bits = 2048
+prompt = no
+default_md = sha256
+distinguished_name = dn
+
+[dn]
+C=FI
+ST=Uusimaa
+L=Helsinki
+O=Oskari
+OU=Oskari
+emailAddress=osku@oskaripolho.com
+CN = localhost

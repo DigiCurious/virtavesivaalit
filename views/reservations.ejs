@@ -1,0 +1,75 @@
+<% include ./partials/header %>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Reservations</h1>
+            <hr>
+        </div>
+    </div>
+    
+    <div class="row">
+        <div class="col-md-8">
+            <% Object.keys(reservationsByBatchId).forEach(function (batchId) {%>
+            <div id="reservation">
+            <h4>
+                <a href="/reservation/<%=batchId%>">
+                <%=reservationsByBatchId[batchId][0].firstname%>
+                </a>
+            </h4>
+            <table class="table">
+                <form action="/admin?_method=DELETE" method="POST">
+                <tbody class="table table-hover">
+            
+                <tr>
+                    <th>Items:</th>
+                    <td></td>
+                </tr>
+                    <%reservationsByBatchId[batchId].forEach(function (reservation) {%>
+                        <tr>
+                            <td></td>
+                            <td id="title"><span><%=reservation.title%></span></td>
+                        </tr>
+                        <% }); %>
+                <tr>
+                    <th>Until</th>
+                    <td></td>
+                </tr>
+                <tr>
+                    <th></th>
+                    <td id="reservedTo"><%=reservationsByBatchId[batchId][0].to%><input type="hidden" name="batchId" value="<%=reservationsByBatchId[batchId][0].batchId%>"></td>
+                </tr>
+                <button type="submit" class="btn btn-default">Mark as returned</button>
+                </form>
+                </tbody>
+            </table>
+            </div>
+            <hr>
+            <% }); %>
+        </div>
+        <div class="col-md-4">
+            <h4>Search for reservations</h4>
+            <form action="/admin" method="POST">
+                <div class="form-group">
+                    <label>Search by client</label>
+                    <input id="searchClient" class="form-control" type="search" name="client">
+                </div>
+                <div class="form-group">
+                    <label>Search by item</label>
+                    <input id="searchItem" class="form-control" type="search" name="item">
+                </div>
+                <div class="form-group">
+                    <label>Search by due date</label>
+                    <input id="searchDueDate" class="form-control" type="datetime-local" name="dueDate">
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-block" type="submit">search</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+</div>
+
+<% include ./partials/footer %>
+

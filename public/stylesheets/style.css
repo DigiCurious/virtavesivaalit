@@ -1,0 +1,88 @@
+body {
+  background-image: url("../images/cr_vaalikone_BG.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  font-family: Georgia;
+  margin: auto;
+  color: white;
+}
+
+#logo{
+	height: 100px;
+ 	width: 100px;
+ 	position: center;
+ 	margin: 10px 0px 10px 0px;
+ 	border-radius: 100px;
+}
+
+#logot{
+ 	margin: auto;
+}
+
+
+#index{
+	height: 100px;
+ 	width: 100px;
+ 	margin: 10px 0px 10px 0px;
+ 	border-radius: 100px;
+}
+
+.jumbotron{
+	background-color: rgba(0,0,0,0);
+	text-align: center;
+}
+
+#profiili{
+	height: 200px;
+ 	width: 200px;
+ 	margin: 50px 0px 50px 0px;
+ 	border-radius: 100px;
+}
+
+h1{
+	font-family: Futura;
+	text-transform: uppercase;
+}
+
+.teesi{
+	margin-top: 100px;
+}
+
+#teesi{
+	font-family: Futura;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.display-4{
+	margin-bottom: 30px;
+	font-size: 60;
+}
+
+#ehdokas{
+	font-family: Futura;
+	font-size: 12px;
+	font-weight: bold;
+}
+
+.form-group{
+	margin-bottom: 30px;
+}
+
+.col-md-1.col-md-offset-3{
+  border-radius: 5px;
+  padding: 10px;
+  margin: 0px;
+}
+
+.col-md-8.col-md-offset-3{
+  border-radius: 5px;
+  padding: 50px;
+  width: 50%;
+  margin: 0 auto;
+}
+
+a {
+  color: #00B7FF;
+}
