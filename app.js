@@ -106,7 +106,7 @@ app.use(function(err, req, res, next) {
 });
 
 
-if(NODE_ENV == "production"){
+if(process.env.NODE_ENV == "production"){
 	httpServer.listen(process.env.PORT || 8080);
 }else{
 	httpsServer.listen(8443);
