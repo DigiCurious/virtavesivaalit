@@ -16,7 +16,7 @@ block content
     .row
       .col-md-8.col-md-offset-3
         img#profiili(src=url)
-        form(method='POST' action='/register')
+        form(method='POST' action='/register/confirmation')
           input.form-control(type='hidden' id='kuva' value=url placeholder=url name='kuva')
           div.form-group
             label(for='nimi') Nimi
@@ -52,8 +52,9 @@ block content
               kompensaatiota kalakannoille ja kalastukselle aiheutetusta haitasta. Velvoitetta ei tällöin voida vastoin luvan haltijan suostumusta määrätä niihin jälkikäteen. Tämä epäkohta voidaan korjata Vesilakia muuttamalla. Lakimuutoksen tulee myös velvoittaa luvan haltijan maksamaan sille määrätyn kalatien, jos vesistön patoamisesta ja säännöstelystä aiheutuu vahinkoa uhanalaisille kalakannoille. Vesivoimaloiden luvat ovat maailmalla tyypillisesti määräaikaisia. Suomessa vesivoimaloiden
               luvat ovat nykyisen vesilainsäädännön mukaisesti ikuisia. Kun luvista tehdään Vesilain uudistuksessa yleisen mallin mukaisesti määräaikaisia, voidaan niihin helpommin soveltaa uutta, luvan myöntämisen jälkeen syntynyttä lainsäädäntöä, kuten EU:n Vesipuitedirektiivin ja vaatimuksia ja uusitun kalastuslain tavoitteita.
             div.form-group
-              label(for='vaalipiiri')
-              select.form-control(type='select' id='puolue' placeholder='email' name='teesi1')
+              label(for='teesi1')
+              select.form-control(type='select' value=teesit[0] id='puolue' placeholder=teesit[0] name='teesi1')
+                option(value="teesit[0]" hidden)=teesit[0]
                 option kyllä
                 option ei
           .teesi
@@ -68,7 +69,8 @@ block content
               huomattavasti parempi ratkaisu vaelluskalojen elinkierrolle kuin kalatie. Vesien hyvän ekologisen tilan saavuttaminen (vuoteen 2027 mennessä) vaatii kansallisen patojenpurkuohjelman.
             div.form-group
               label(for='vaalipiiri')
-              select.form-control(type='select' id='puolue' name='teesi2')
+              select.form-control(type='select' id='puolue' placeholder=teesit[1] value=teesit[1] name='teesi2')
+                option(value="teesit[1]" hidden)=teesit[1]
                 option kyllä
                 option ei
           .teesi
@@ -81,7 +83,8 @@ block content
               pysäyttämisestä (YK:n Biodiversiteettisopimus). Kemijoen ja Iijoen kalatalousvelvoitteiden päivitys aloitettiin jo noin kaksi vuotta sitten ja prosessin eteneminen on ollut hidasta.
             div.form-group
               label(for='vaalipiiri')
-              select.form-control(type='select' id='puolue' name='teesi3')
+              select.form-control(type='select' id='puolue' value=teesit[2] name='teesi3')
+                option(value="teesit[2]" hidden)=teesit[2]
                 option kyllä
                 option ei
           .teesi
@@ -93,7 +96,8 @@ block content
               sen rakentaminen viranomaisen niin esittäessä. Kalateitä on kuitenkin rakennettu vain yhdeksän ja niistäkin viisi yhteiskunnan varoin. Selvityksessä tarkasteltujen alle 5 MW vesivoimaloiden osuus Suomen vesivoiman tuotannosta on viisi prosenttia.
             div.form-group
               label(for='vaalipiiri')
-              select.form-control(type='select' id='puolue' name='teesi4')
+              select.form-control(type='select' id='puolue' value=teesit[3] name='teesi4')
+                option(value="teesit[3]" hidden)=teesit[3]
                 option kyllä
                 option ei
           .teesi
@@ -107,7 +111,8 @@ block content
               (kalatalousalueiden käyttö- ja hoitosuunnitelmat) kalastus tulee järjestää varsinkin seisovien pyydysten osalta niin että rajoitukset tukevat uhanalaisten kalakantojen palauttamisyrityksiä.
           div.form-group
             label(for='vaalipiiri')
-            select.form-control(type='select' id='puolue' name='teesi5')
+            select.form-control(type='select' id='puolue' value=teesit[4] name='teesi5')
+              option(value="teesit[4]" hidden)=teesit[4]
               option kyllä
               option ei
           button.btn.btn-primary(type='submit') Ilmoittaudu mukaan

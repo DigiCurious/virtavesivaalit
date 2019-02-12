@@ -23,6 +23,23 @@ var auth = require('./routes/auth');
 
 var app = express();
 
+ // force all traffic through https in production
+                if (process.env.NODE_ENV === 'production') {
+                    app.use((req, res, next) => {
+                        if (!req.secure && req.get('X-Forwarded-Proto') !== 'https') {
+                            if (req.method !== 'GET') {
+                                res.status(404).send();
+                            } else {
+                                res.redirect(`https://${req.get('Host')}${req.url}`);
+                            }
+                        } else {
+                            next();
+                        }
+                    });
+                }
+
+app.use(cookieParser());
+
 var httpServer = http.createServer(app);
 
 
@@ -75,7 +92,6 @@ passport.deserializeUser(function(id, done) {
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
@@ -83,11 +99,11 @@ app.use('/register', usersRouter);
 app.use('/auth', auth);
 
 
-app.get('/auth/facebook', passport.authenticate('facebook'));
+//app.get('/auth/facebook', passport.authenticate('facebook'));
 
-app.get('/auth/facebook/callback',
-  passport.authenticate('facebook', { successRedirect: './register',
-                                      failureRedirect: '/login' }));
+/*app.get('/auth/facebook/callback',
+  passport.authenticate('facebook', { successRedirect: '/moi',
+                                      failureRedirect: '/hei' }));*/
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

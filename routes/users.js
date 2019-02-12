@@ -3,12 +3,39 @@ var router = express.Router();
 var Ehdokas = require('../models/ehdokas');
 //var request = require('request');
 
+router.use(require('cookie-parser')());
 /* GET users listing. */
 
 
 /* GET users listing. */
-router.get('/', ensureAuthenticated, function(req, res, next) {
+router.get('/', function(req,res,next){
+	res.render("form");
+});
+
+router.post('/', function(req,res,next){
 	
+	  console.log("LOMAKKEEN TIEDOT " + req.body.teesi1 + " & " + req.body.teesi2);
+
+	  var teesit = new Array;
+
+	  teesit.push(req.body.teesi1);
+	  teesit.push(req.body.teesi2);
+	  teesit.push(req.body.teesi3);
+	  teesit.push(req.body.teesi4);
+	  teesit.push(req.body.teesi5);
+
+	  console.log("teesit array = " + teesit);
+	  res.cookie('teesit', teesit);
+	  res.redirect("/register/confirmation");
+})
+
+router.get('/confirmation', ensureAuthenticated, function(req, res, next) {
+	
+	//console.log("COOKIE ON TÄÄLLÄ " + req.cookies.teesit);
+	if(req.cookies){
+		var teesit = JSON.stringify(req.cookies.teesit);
+	}
+	console.log("TEESIT ON = " + teesit);
 	var userid = req.user.userid
 	var accesstoken = req.user.accesstoken
     var picture;
@@ -23,12 +50,12 @@ router.get('/', ensureAuthenticated, function(req, res, next) {
 					});*/
 						  	
   
-  res.render('confirmation', { user: req.user, url: url });
+  res.render('confirmation', { user: req.user, url: url, teesit:JSON.parse(teesit)});
 });
 
-router.post('/', function(req, res, next) {
+router.post('/confirmation', function(req, res, next) {
   
-  console.log(req.body);
+  //console.log("TÄÄLLÄ ON KAIKKI DATA EHDOKKAASTA " + req.body);
 
   var puolue = req.body.puolue;
   var vaalipiiri = req.body.vaalipiiri;
