@@ -6,7 +6,7 @@ var User = require('../models/user');
 passport.use(new FacebookStrategy({
     clientID: "337771393733381",
     clientSecret: "e61c385bb897f1619cc35008d88a81b2",
-    callbackURL: "virtavesivaalit.fi/auth/facebook/callback"
+    callbackURL: "https://localhost:8443/auth/facebook/callback"
   },
   function(accessToken, refreshToken, profile, done) {
     
