@@ -9,7 +9,8 @@ var EhdokasSchema = new Schema({
   kuva: String,
   puolue: String,
   vaalipiiri: String,
-  teesit: Array
+  teesit: Array,
+  perustelut: Array
 });
 
 // Compile model from schema

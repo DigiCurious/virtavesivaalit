@@ -24,8 +24,17 @@ router.post('/', function(req,res,next){
 	  teesit.push(req.body.teesi4);
 	  teesit.push(req.body.teesi5);
 
-	  console.log("teesit array = " + teesit);
+	  var perustelut = new Array;
+
+	  perustelut.push(req.body.perustelu1);
+	  perustelut.push(req.body.perustelu2);
+	  perustelut.push(req.body.perustelu3);
+	  perustelut.push(req.body.perustelu4);
+	  perustelut.push(req.body.perustelu5);
+
+	  console.log("perustelut array = " + perustelut);
 	  res.cookie('teesit', teesit);
+	  res.cookie('perustelut', perustelut);
 	  res.redirect("/register/confirmation");
 })
 
@@ -34,8 +43,9 @@ router.get('/confirmation', ensureAuthenticated, function(req, res, next) {
 	//console.log("COOKIE ON TÄÄLLÄ " + req.cookies.teesit);
 	if(req.cookies){
 		var teesit = JSON.stringify(req.cookies.teesit);
+		var perustelut = JSON.stringify(req.cookies.perustelut);
 	}
-	console.log("TEESIT ON = " + teesit);
+	console.log("PERUSTELUT ON = " + perustelut);
 	var userid = req.user.userid
 	var accesstoken = req.user.accesstoken
     var picture;
@@ -50,7 +60,7 @@ router.get('/confirmation', ensureAuthenticated, function(req, res, next) {
 					});*/
 						  	
   
-  res.render('confirmation', { user: req.user, url: url, teesit:JSON.parse(teesit)});
+  res.render('confirmation', { user: req.user, url: url, teesit:JSON.parse(teesit), perustelut: JSON.parse(perustelut)});
 });
 
 router.post('/confirmation', function(req, res, next) {
@@ -61,6 +71,7 @@ router.post('/confirmation', function(req, res, next) {
   var vaalipiiri = req.body.vaalipiiri;
   var name = req.body.nimi;
   var kuva = req.body.kuva;
+  
   var teesit = new Array;
   teesit.push(req.body.teesi1);
   teesit.push(req.body.teesi2);
@@ -68,8 +79,14 @@ router.post('/confirmation', function(req, res, next) {
   teesit.push(req.body.teesi4);
   teesit.push(req.body.teesi5);
 
+  var perustelut = new Array;
+  perustelut.push(req.body.perustelu1);
+  perustelut.push(req.body.perustelu2);
+  perustelut.push(req.body.perustelu3);
+  perustelut.push(req.body.perustelu4);
+  perustelut.push(req.body.perustelu5);
 
-  var uusiehdokas = new Ehdokas({ puolue: puolue, vaalipiiri: vaalipiiri, name:name, kuva:kuva, teesit:teesit });
+  var uusiehdokas = new Ehdokas({ puolue: puolue, vaalipiiri: vaalipiiri, name:name, kuva:kuva, teesit:teesit , perustelut: perustelut});
   uusiehdokas.save(function (err) {
   if (err){console.log(err)}else{
   	res.redirect('/');
