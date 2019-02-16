@@ -1,7 +1,52 @@
 extends layout
 
 block content
-   .main.container 
+    script.
+      $(document).ready(function(){
+        $('select#teesi1').change(function(){
+            var selectedValue = $(this).val();
+            if(selectedValue === "kyllä"){
+             $('textarea#teesi1').css('display','none');
+            }else if(selectedValue === "ei"){
+             $('textarea#teesi1').css('display','block');
+            }
+        })
+        $('select#teesi2').change(function(){
+            var selectedValue = $(this).val();
+            if(selectedValue === "kyllä"){
+             $('textarea#teesi2').css('display','none');
+            }else if(selectedValue === "ei"){
+             $('textarea#teesi2').css('display','block');
+            }
+        })
+        $('select#teesi3').change(function(){
+            var selectedValue = $(this).val();
+            if(selectedValue === "kyllä"){
+             $('textarea#teesi3').css('display','none');
+            }else if(selectedValue === "ei"){
+             $('textarea#teesi3').css('display','block');
+            }
+        })
+        $('select#teesi4').change(function(){
+            var selectedValue = $(this).val();
+            if(selectedValue === "kyllä"){
+             $('textarea#teesi4').css('display','none');
+            }else if(selectedValue === "ei"){
+             $('textarea#teesi4').css('display','block');
+            }
+        })
+        $('select#teesi5').change(function(){
+            var selectedValue = $(this).val();
+            if(selectedValue === "kyllä"){
+             $('textarea#teesi5').css('display','none');
+            }else if(selectedValue === "ei"){
+             $('textarea#teesi5').css('display','block');
+            }
+        })
+      })
+
+    .main.container 
+
     //-
         .jumbotron.jumbtron-fluid
           .container
