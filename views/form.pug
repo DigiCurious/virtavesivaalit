@@ -1,19 +1,75 @@
 extends layout
 
+
 block content
+  script.
+    $(document).ready(function(){
+      $('select#teesi1').change(function(){
+          var selectedValue = $(this).val();
+          if(selectedValue === "kyllä"){
+           $('textarea#teesi1').css('display','none');
+          }else if(selectedValue === "ei"){
+           $('textarea#teesi1').css('display','block');
+          }
+      })
+      $('select#teesi2').change(function(){
+          var selectedValue = $(this).val();
+          if(selectedValue === "kyllä"){
+           $('textarea#teesi2').css('display','none');
+          }else if(selectedValue === "ei"){
+           $('textarea#teesi2').css('display','block');
+          }
+      })
+      $('select#teesi3').change(function(){
+          var selectedValue = $(this).val();
+          if(selectedValue === "kyllä"){
+           $('textarea#teesi3').css('display','none');
+          }else if(selectedValue === "ei"){
+           $('textarea#teesi3').css('display','block');
+          }
+      })
+      $('select#teesi4').change(function(){
+          var selectedValue = $(this).val();
+          if(selectedValue === "kyllä"){
+           $('textarea#teesi4').css('display','none');
+          }else if(selectedValue === "ei"){
+           $('textarea#teesi4').css('display','block');
+          }
+      })
+      $('select#teesi5').change(function(){
+          var selectedValue = $(this).val();
+          if(selectedValue === "kyllä"){
+           $('textarea#teesi5').css('display','none');
+          }else if(selectedValue === "ei"){
+           $('textarea#teesi5').css('display','block');
+          }
+      })
+    })
+    
+
   .main.container
     .jumbotron.jumbtron-fluid
       .container
         h1.display-4 VIRTAVESIVAALIT
         p.lead.
-          virtavesivaalit.fi on vuoden 2019 eduskuntavaaleja varten rakennettu vaalikone. Se haastaa ehdokkaita tärkeiden, maamme hyvinvointiin liittyvien kysymysten äärellä ja auttaa äänestäjää valitsemaan omille arvoilleen sopivan ehdokkaan.
+          virtavesivaalit.fi
+          on vuoden 2019 eduskuntavaaleja varten rakennettu vaalikone.
+          Se haastaa ehdokkaita tärkeiden, maamme hyvinvointiin liittyvien kysymysten äärellä ja auttaa äänestäjää valitsemaan omille arvoilleen sopivan ehdokkaan.
           Virtavesivaalit ei ole perinteinen vaalikone. Kansanedustajaehdokkaat sitoutuvat viiteen virtavesiämme ja niiden tulevaisuutta koskevaan teesiin vastaamalla joko KYLLÄ tai EI.
+        p.lead.
           Vastaukset julkaistaan sellaisenaan, eikä kansalaisten tarvitse itse vastata kysymyksiin.
+        p.lead.
           Suomen virtavedet ovat ympäristön ohella merkittävä osa kulttuurillista rikkautta suomalaisille. Maamme ylivoimaisesti isoin harrastus on vapaa-ajan kalastus, joka on täysin riippuvainen jokien ja vesistöjen ekologisesta tilasta. Lähes kaikki vaelluskalakantamme ovat hätää kärsimässä, eikä kalastusmatkailun potentiaalista pystytä nykyisellä vesilainsäädännöllä hyödyntämään kuin murto-
           osa. Vesilaki on vanhentunut energiapolitiikan osalta, sillä se mahdollistaa vesistöille ja kalakannoille haitallisten, energiantuotannon kannalta merkityksettömien vesivoimaloiden toiminnan jatkumisen.
+        p.lead.
           virtavesivaalit.fi on lähtöisin Concrete Reasons -dokumenttielokuvan tekijöiltä ja se on tehty yhteistyössä WWF Suomen, Suomen Luonnonsuojeluliiton ja Suomen Vapaa-ajankalastajien Keskusjärjestön kanssa.
-          Concrete Reasons on kahden luovan alan freelancerin, Risto Ruokolan ja Toni Kinnusen, tekemä dokumenttielokuva Suomen uhanalaisista ja sukupuuttoon kuolleista vaelluskalakannoista ja niiden kaltoinkohdelluista elin- ja lisääntymisalueista. Kalat kertovat niin ympäristön ja ihmisten kuin paikallisten ja valtakunnallisten yritysten hyvinvoinnista. Elokuvan yhteistyökumppanina oli WWF Suomi ja tukijoina Suomen Luonnonsuojelunsäätiö, Rapala Rahasto sekä Virtavesien Hoitoyhdistys ry.
-          Elokuvan pystyt katsomaan tästä: concretereasons.com
+        p.lead.
+          Concrete Reasons on kahden luovan alan freelancerin, Risto Ruokolan ja Toni Kinnusen, tekemä dokumenttielokuva Suomen uhanalaisista ja sukupuuttoon kuolleista vaelluskalakannoista ja niiden kaltoinkohdelluista elin- ja lisääntymisalueista. Kalat kertovat niin ympäristön ja ihmisten kuin paikallisten ja valtakunnallisten yritysten hyvinvoinnista.
+        p.lead.
+          Elokuvan yhteistyökumppanina oli WWF Suomi ja tukijoina Suomen Luonnonsuojelunsäätiö, Rapala Rahasto sekä Virtavesien Hoitoyhdistys ry.
+        p.lead Elokuvan pystyt katsomaan tästä: 
+          a(href="https://vimeo.com/317557748/270e509a99")  https://vimeo.com/317557748/270e509a99"
+
         .container#logot
           .row
             .col-md-2
@@ -21,11 +77,11 @@ block content
             .col-md-2
               img#logo(src="https://upload.wikimedia.org/wikipedia/fi/3/33/SuomenVapaa-ajankalastajienKeskusjarjesto.jpg")
     .row
-      .col-md-8.col-md-offset-3
+      .col-md-12.col-md-offset-3
         form(method='POST' action='/register')
           .teesi
             p#teesi.
-               Haluan vesilain uudistettavaksi tulevalla hallituskaudella, jotta vaelluskalojen ja muun
+               1.Haluan vesilain uudistettavaksi tulevalla hallituskaudella, jotta vaelluskalojen ja muun
                vesiluonnon elinvoimaisuutta voidaan tehokkaammin edistää.
             p.
               Varsinais-Suomen ELY-keskuksen teettämän selvityksen mukaan Suomen sisävesistä
@@ -35,15 +91,15 @@ block content
             
             div.form-group
               label(for='vaalipiiri')
-              select.form-control(type='select' id='teesi1' placeholder='email' name='teesi1')
+              select.form-control(type='select' id='teesi1' value='kyllä' name='teesi1')
                 option kyllä
                 option ei
             div.form-group
               label(for='perustelu')
-              input.form-control(type='text' id='nimi' placeholder="Miksi vastasit ei?" name='perustelu1')
+              textarea.form-control(type='text' id='teesi1' placeholder="Haluatko perustella vastaustasi?" name='perustelu1' rows="10" maxlength="250")
           .teesi
             p#teesi.
-               Haluan seuraavaan hallitusohjelmaan tavoitteeksi pienvesivoimaloiden (<10MW) toiminnan hallitun alasajon, aloittaen minivesivoimaa (<1MW) tuottavista laitoksista.
+               2.Haluan seuraavaan hallitusohjelmaan tavoitteeksi pienvesivoimaloiden (<10MW) toiminnan hallitun alasajon, aloittaen minivesivoimaa (<1MW) tuottavista laitoksista.
             p.
               40 prosenttia Suomen aktiivisista vesivoimaloista on tuotannoltaan alle 1 MW laitoksia.
               Niiden yhteenlaskettu sähköntuotanto on yksi prosentti vesivoimalla tuotettavasta sähköstä. Tämä on vain 0,2% koko Suomen vuosittaisesta sähköntuotannosta. Marginaalisen sähköntuotantokapasiteetin lisäksi, ’tippavoimalat’ eivät myöskään osallistu ns. säätövoiman tuottamiseen, vaan niiden sähköntuotanto on suoraan suhteessa joen virtaamaan. Pienten
@@ -51,15 +107,15 @@ block content
               olisi huomattavasti parempi ratkaisu vaelluskalojen elinkierrolle kuin kalatie. Vesien hyvän ekologisen tilan saavuttaminen (vuoteen 2027 mennessä) vaatii kansallisen patojenpurkuohjelman.
             div.form-group
               label(for='vaalipiiri')
-              select.form-control(type='select' id='teesi2' name='teesi2')
+              select.form-control(type='select' rows="10" id='teesi2' name='teesi2')
                 option kyllä
                 option ei
             div.form-group
               label(for='perustelu')
-              input.form-control(type='text' id='nimi' placeholder="Miksi vastasit ei?" name='perustelu2')
+              textarea.form-control(type='text' rows="10" id='teesi2' placeholder="Haluatko perustella vastaustasi?" name='perustelu2' maxlength="150")
           .teesi
             p#teesi.
-               Haluan että pienehköjen (10-20 MW), keskikokoisten (20-60 MW) ja suurten (> 100 MW) vesivoimaloidemme voimassa olevien kalatalousvelvoitteiden ajanmukaistamista tehostetaan huomattavasti seuraavan hallituskauden aikana. Voimaloiden vanhat istutusvelvoitteet on muutettava kalojen luontaista elinkiertoa tukeviksi toimenpiteiksi. Jo käynnistyneet velvoitteiden muutokset on saatettava loppuun välittömästi. Hallitusohjelmaan tulee tehdä kirjaus voimaloiden vesitalouslupiin lisättävistä kalan kulun mahdollistavista ratkaisuista ja kompensaatiotoimista vesivoiman vuoksi menetettyjen kalojen lisääntymisalueiden osalta, siltä osin kuin ne niistä puuttuvat.
+               3.Haluan että pienehköjen (10-20 MW), keskikokoisten (20-60 MW) ja suurten (> 100 MW) vesivoimaloidemme voimassa olevien kalatalousvelvoitteiden ajanmukaistamista tehostetaan huomattavasti seuraavan hallituskauden aikana. Voimaloiden vanhat istutusvelvoitteet on muutettava kalojen luontaista elinkiertoa tukeviksi toimenpiteiksi. Jo käynnistyneet velvoitteiden muutokset on saatettava loppuun välittömästi. Hallitusohjelmaan tulee tehdä kirjaus voimaloiden vesitalouslupiin lisättävistä kalan kulun mahdollistavista ratkaisuista ja kompensaatiotoimista vesivoiman vuoksi menetettyjen kalojen lisääntymisalueiden osalta, siltä osin kuin ne niistä puuttuvat.
             p.
               Vanhojen voimaloiden kalatalousvelvoitteet ovat pääsääntöisesti kalojen istutuksia. Luvissa määrättyjä kalatalousvelvoitteita voidaan nykyisen vesilain puitteissa vaatia tarkistettavaksi, mikäli olosuhteet ovat merkittävästi muuttuneet. Näitä rakentamisen jälkeen tapahtuneita olosuhteiden muutoksia ovat mm. virtavesilajiston ja -elinympäristöjen merkittävä uhanalaistuminen, uusi kansallinen ja EU-lainsäädäntö ja useat kansalliset strategiat jotka tähtäävät vaelluskalakantojen elvyttämiseen. Lisäksi Suomea velvoittaa joukko kansainvälisiä sopimuksia, mm. biologisen monimuotoisuuden heikentämisen pysäyttämisestä (YK:n Biodiversiteettisopimus). Kemijoen ja Iijoen kalatalousvelvoitteiden päivitys aloitettiin jo noin kaksi vuotta sitten ja prosessin eteneminen on ollut hidasta.
             div.form-group
@@ -69,11 +125,11 @@ block content
                 option ei
             div.form-group
               label(for='perustelu')
-              input.form-control(type='text' id='nimi' placeholder="Miksi vastasit ei?" name='perustelu3')
+              textarea.form-control(type='text' rows="10" id='teesi3' placeholder="Haluatko perustella vastaustasi?" name='perustelu3' maxlength="150")
 
           .teesi
             p#teesi.
-               Haluan viranomaispakkokeinojen soveltamista voimassa olevien, mutta toteuttamatta jääneiden kalatien rakentamisvelvoitteiden toimeenpanon edistämiseksi. Lisäksi haluan, että viranomaiset ryhtyvät vaatimaan kalateitä kalatien salliviin velvoitteisiin.
+               4.Haluan viranomaispakkokeinojen soveltamista voimassa olevien, mutta toteuttamatta jääneiden kalatien rakentamisvelvoitteiden toimeenpanon edistämiseksi. Lisäksi haluan, että viranomaiset ryhtyvät vaatimaan kalateitä kalatien salliviin velvoitteisiin.
             p.
               Pienvesivoimayhtiöt eivät ole toteuttaneet niille määrättyjä kalatievelvoitteita ja viranomaiset eivät liioin ole ryhtyneet vaatimaan niihin kalateiden rakentamista ilmenee Varsinais-Suomen ELY-keskuksen teettämästä selvityksestä. Velvoitteiden toteuttamatta jättäminen on hidastanut uhanalaisten vaelluskalojen palauttamista padottuihin jokiin. Selvitykseen saatiin tiedot 50:stä voimalaitoksesta, joilla on velvoite rakentaa kalatie tai sallia sen rakentaminen viranomaisen niin esittäessä. Kalateitä on kuitenkin rakennettu vain yhdeksän ja niistäkin viisi yhteiskunnan varoin. Selvityksessä tarkasteltujen alle 5 MW vesivoimaloiden osuus Suomen vesivoiman tuotannosta on viisi prosenttia.
             div.form-group
@@ -83,22 +139,22 @@ block content
                 option ei
             div.form-group
               label(for='perustelu')
-              input.form-control(type='text' id='nimi' placeholder="Miksi vastasit ei?" name='perustelu4')
+              textarea.form-control(type='text' rows="10" id='teesi4' placeholder="Haluatko perustella vastaustasi?" name='perustelu4' maxlength="150")
 
           .teesi
             p#teesi.
-              Haluan että vaelluskalojen palauttaminen säilyy myös tulevan hallituksen kärkitavoitteissa, ja että uhanalaisten kalojen elvyttämiseen vaadittavat toimet ulotetaan koskemaan myös kalastuspolitiikkaamme (liialliseen verkkomäärään puuttuminen, uudet biologisesti merkityksellisemmät kalojen alamitat, kestävät kalastuskiintiöt jne). Elinympäristönä virtavesien ennallistamiselle tulee asettaa kunnianhimoiset kansalliset tavoitteet.
+              5.Haluan että vaelluskalojen palauttaminen säilyy myös tulevan hallituksen kärkitavoitteissa, ja että uhanalaisten kalojen elvyttämiseen vaadittavat toimet ulotetaan koskemaan myös kalastuspolitiikkaamme (liialliseen verkkomäärään puuttuminen, uudet biologisesti merkityksellisemmät kalojen alamitat, kestävät kalastuskiintiöt jne). Elinympäristönä virtavesien ennallistamiselle tulee asettaa kunnianhimoiset kansalliset tavoitteet.
             p.
               Luonnontilaiset virtavedet ovat elinympäristönä uhanalaisia Etelä-Suomessa. Uuden kalastuslain mukainen siirtyminen istutuskeskeisestä kalakantojen hoidosta kalakantojen luontaisen elinkierron palauttamiseen, vaatii laajamittaisia ennallistamistoimia, joihin tulee suunnata lisäresursseja mm. Euroopan Meri- ja kalatalousrahaston rahoituksen kautta sekä suuntaamalla lisäresursseja ELY-keskusten kalataloudellisiin määrärahoihin. Kalastuslain toimeenpanon kautta (kalatalousalueiden käyttö- ja hoitosuunnitelmat) kalastus tulee järjestää varsinkin seisovien pyydysten osalta niin että rajoitukset tukevat uhanalaisten kalakantojen palauttamisyrityksiä.
           div.form-group
             label(for='vaalipiiri')
-            select.form-control(type='select' id='teesi5' name='teesi5')
+            select.form-control(type='select' rows="10" id='teesi5' name='teesi5')
               option kyllä
               option ei
           div.form-group
               label(for='perustelu')
-              input.form-control(type='text' id='nimi' placeholder="Miksi vastasit ei?" name='perustelu5')
+              textarea.form-control(type='text' id='teesi5' placeholder="Haluatko perustella vastaustasi?" name='perustelu5' rows="10" maxlength="150")
 
-          button.btn.btn-primary(type='submit') Ilmoittaudu mukaan
+          button.btn.btn-primary(type='submit') Lähetä vastaukset
 
     a(href="/privacy") virtavesivaalit.fi/privacy

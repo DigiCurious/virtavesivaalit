@@ -1,5 +1,5 @@
 body {
-  background-image: url("../images/cr_vaalikone_BG.png");
+  background-image: url("../images/cr_virtavesivaalit_BG.png");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -8,17 +8,24 @@ body {
   color: white;
 }
 
+textarea.form-control{
+	display:none;
+}
+
 .jumbotron p{
 	font-size: 16px;
 	text-align: left;
 }
+
+.container.jumbotron.jumbotron-fluid {
+	padding:0;}
 
 #logo{
 	height: 100px;
  	width: 100px;
  	position: center;
  	margin: 10px 0px 10px 0px;
- 	border-radius: 100px;
+ 	border-radius: 10px;
 }
 
 #logot{
@@ -83,15 +90,22 @@ h1{
 
 .col-md-1.col-md-offset-3{
   border-radius: 5px;
-  padding: 10px;
   margin: 0px;
 }
 
-.col-md-8.col-md-offset-3{
+.col-md-12.col-md-offset-3{
   border-radius: 5px;
-  padding: 50px;
+  padding: 60px;
+  width: 80%;
+  margin:auto;
+}
+
+.form-control{
+	width:50%;
+}
+
+input[type="text"] {
   width: 50%;
-  margin: 0 auto;
 }
 
 a {
