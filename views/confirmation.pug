@@ -3,14 +3,28 @@ extends layout
 block content
     script.
       $(document).ready(function(){
+        if($('select#teesi1').val() === "ei"){
+          $('textarea#teesi1').css('display','block');
+        }else{
+          $('textarea#teesi1').css('display','none');
+        }
         $('select#teesi1').change(function(){
             var selectedValue = $(this).val();
             if(selectedValue === "kyllä"){
              $('textarea#teesi1').css('display','none');
+             var perustelu = $('textarea#teesi1').attr("value")
+             $('textarea#teesi1').val(perustelu);
             }else if(selectedValue === "ei"){
              $('textarea#teesi1').css('display','block');
             }
         })
+        if($('select#teesi2').val() === "ei"){
+          $('textarea#teesi2').css('display','block');
+          var perustelu = $('textarea#teesi2').attr("value")
+          $('textarea#teesi2').val(perustelu);
+        }else{
+          $('textarea#teesi2').css('display','none');
+        }
         $('select#teesi2').change(function(){
             var selectedValue = $(this).val();
             if(selectedValue === "kyllä"){
@@ -19,6 +33,13 @@ block content
              $('textarea#teesi2').css('display','block');
             }
         })
+        if($('select#teesi3').val() === "ei"){
+          $('textarea#teesi3').css('display','block');
+          var perustelu = $('textarea#teesi3').attr("value")
+          $('textarea#teesi3').val(perustelu);
+        }else{
+          $('textarea#teesi3').css('display','none');
+        }
         $('select#teesi3').change(function(){
             var selectedValue = $(this).val();
             if(selectedValue === "kyllä"){
@@ -27,6 +48,13 @@ block content
              $('textarea#teesi3').css('display','block');
             }
         })
+        if($('select#teesi4').val() === "ei"){
+          $('textarea#teesi4').css('display','block');
+          var perustelu = $('textarea#teesi4').attr("value")
+          $('textarea#teesi4').val(perustelu);
+        }else{
+          $('textarea#teesi4').css('display','none');
+        }
         $('select#teesi4').change(function(){
             var selectedValue = $(this).val();
             if(selectedValue === "kyllä"){
@@ -35,6 +63,13 @@ block content
              $('textarea#teesi4').css('display','block');
             }
         })
+        if($('select#teesi5').val() === "ei"){
+          $('textarea#teesi5').css('display','block');
+          var perustelu = $('textarea#teesi5').attr("value")
+          $('textarea#teesi5').val(perustelu);
+        }else{
+          $('textarea#teesi5').css('display','none');
+        }
         $('select#teesi5').change(function(){
             var selectedValue = $(this).val();
             if(selectedValue === "kyllä"){
@@ -48,7 +83,7 @@ block content
     .main.container 
       .row
         .col-md-12.col-md-offset-3
-          h2#teesi Tarkasta vastauksesi
+          h2#teesi Tarkista vastauksesi
           img#profiili(src=url)
           form(method='POST' action='/register/confirmation')
             input.form-control(type='hidden' id='kuva' value=url placeholder=url name='kuva')
@@ -99,71 +134,65 @@ block content
 
             .teesi
               p#teesi.
-                 Haluan Vesilain uudistettavaksi tulevalla hallituskaudella, jotta vaelluskalojen ja muun vesiluonnon elinvoimaisuutta voidaan tehokkaammin edistää.
+                 1. Haluan Vesilain uudistettavaksi tulevalla hallituskaudella, jotta vaelluskalojen ja muun vesiluonnon elinvoimaisuutta voidaan tehokkaammin edistää.
               div.form-group
                 label(for='teesi1')
-                select.form-control(type='select' value=teesit[0] id='puolue' placeholder=teesit[0] name='teesi1')
+                select.form-control(type='select' value=teesit[0] id='teesi1' placeholder=teesit[0] name='teesi1')
                   option(value=teesit[0] hidden)=teesit[0]
                   option kyllä
                   option ei
-              if teesit[0] === 'ei'
                 div.form-group
                   label(for='nimi')
-                  textarea.form-control(type='text' id='nimi' rows="10" max-value="250" value=perustelut[0] placeholder=perustelut[0] name='perustelu1')
+                  textarea.form-control.register(type='text' id='teesi1' rows="10" max-value="250" value=perustelut[0] placeholder=perustelut[0] name='perustelu1')
             .teesi
               p#teesi.
-                 Haluan seuraavaan hallitusohjelmaan tavoitteeksi pienvesivoimaloiden (< 10 MW)
-                 toiminnan hallitun alasajon, aloittaen minivesivoimaa (< 1MW) tuottavista laitoksista
+                 2. Haluan seuraavaan hallitusohjelmaan tavoitteeksi alle pienvesivoimaloiden (< 5 MW) toiminnan hallitun alasajon, aloittaen minivesivoimaa (<1MW) tuottavista laitoksista.
               div.form-group
                 label(for='vaalipiiri')
-                select.form-control(type='select' id='puolue' placeholder=teesit[1] value=teesit[1] name='teesi2')
+                select.form-control(type='select' id='teesi2' placeholder=teesit[1] value=teesit[1] name='teesi2')
                   option(value=teesit[1] hidden)=teesit[1]
                   option kyllä
                   option ei
-              if teesit[1] === 'ei'
                 div.form-group
                   label(for='nimi')
-                  textarea.form-control(type='text' id='nimi' value=perustelut[1] placeholder=perustelut[1] rows="10" max-value="250" name='perustelu2')
+                  textarea.form-control.register(type='text' id='teesi2' value=perustelut[1] placeholder=perustelut[1] rows="10" max-value="250" name='perustelu2')
             .teesi
               p#teesi.
-                 Haluan että pienehköjen (10-20 MW), keskikokoisten (20-60 MW) ja suurten (< 100 MW) vesivoimaloidemme voimassa olevien kalatalousvelvoitteiden ajanmukaistamista tehostetaan huomattavasti seuraavan hallituskauden aikana. Voimaloiden vanhat istutusvelvoitteet on muutettava kalojen luontaista elinkiertoa tukeviksi toimenpiteiksi. Jo käynnistyneet velvoitteiden muutokset (mm. Kemijoki ja Iijoki) on saatettava loppuun
+                 3. Haluan että pienehköjen (10-20 MW), keskikokoisten (20-60 MW) ja suurten (< 100 MW) vesivoimaloidemme voimassa olevien kalatalousvelvoitteiden ajanmukaistamista tehostetaan huomattavasti seuraavan hallituskauden aikana. Voimaloiden vanhat istutusvelvoitteet on muutettava kalojen luontaista elinkiertoa tukeviksi toimenpiteiksi. Jo käynnistyneet velvoitteiden muutokset (mm. Kemijoki ja Iijoki) on saatettava loppuun
                  välittömästi. Hallitusohjelmaan tulee tehdä kirjaus voimaloiden vesitalouslupiin lisättävistä kalan kulun mahdollistavista ratkaisuista ja kompensaatiotoimista vesivoiman vuoksi menetettyjen kalojen lisääntymisalueiden osalta, siltä osin kuin ne niistä puuttuvat.
               div.form-group
                 label(for='vaalipiiri')
-                select.form-control(type='select' id='puolue' value=teesit[2] name='teesi3')
+                select.form-control(type='select' id='teesi3' value=teesit[2] name='teesi3')
                   option(value=teesit[2] hidden)=teesit[2]
                   option kyllä
                   option ei
-              if teesit[2] === 'ei'
                 div.form-group
                   label(for='nimi')
-                  textarea.form-control(type='text' id='nimi' value=perustelut[2] placeholder=perustelut[2] rows="10" max-value="250" name='perustelu3')
+                  textarea.form-control.register(type='text' id='teesi3' value=perustelut[2] rows="10" max-value="250" name='perustelu3')
             .teesi
               p#teesi.
-                 Haluan viranomaispakkokeinojen soveltamista voimassa olevien, mutta toteuttamatta jääneiden kalatien rakentamisvelvoitteiden toimeenpanon edistämiseksi. Lisäksi haluan, että viranomaiset ryhtyvät vaatimaan kalateitä kalatien salliviin velvoitteisiin.
+                 4. Haluan viranomaispakkokeinojen soveltamista voimassa olevien, mutta toteuttamatta jääneiden kalatien rakentamisvelvoitteiden toimeenpanon edistämiseksi. Lisäksi haluan, että viranomaiset ryhtyvät vaatimaan kalateitä kalatien salliviin velvoitteisiin.
               div.form-group
                 label(for='vaalipiiri')
-                select.form-control(type='select' id='puolue' value=teesit[3] name='teesi4')
+                select.form-control(type='select' id='teesi4' value=teesit[3] name='teesi4')
                   option(value=teesit[3] hidden)=teesit[3]
                   option kyllä
                   option ei
-              if teesit[3] === 'ei'
                 div.form-group
                   label(for='nimi')
-                  textarea.form-control(type='text' id='nimi' value=perustelut[3] placeholder=perustelut[3] rows="10" max-value="250" name='perustelu4')
+                  textarea.form-control.register(type='text' id='teesi4' value=perustelut[3] placeholder=perustelut[3] rows="10" max-value="250" name='perustelu4')
             .teesi
               p#teesi.
-                Haluan että vaelluskalojen palauttaminen säilyy myös tulevan hallituksen
+                5. Haluan että vaelluskalojen palauttaminen säilyy myös tulevan hallituksen
                 ’kärkitavoitteissa’, ja että uhanalaisten kalojen elvyttämiseen vaadittavat toimet ulotetaan koskemaan myös kalastuspolitiikkaamme (liialliseen verkkomäärään puuttuminen, uudet biologisesti merkityksellisemmät kalojen alamitat, kestävät kalastuskiintiöt jne). Elinympäristönä virtavesien ennallistamiselle tulee asettaa kunnianhimoiset kansalliset
                 tavoitteet.
             div.form-group
               label(for='vaalipiiri')
-              select.form-control(type='select' id='puolue' value=teesit[4] name='teesi5')
-                option(value=teesit[4] hidden)=teesit[0]
-                option kyllä
-                option ei
-            if teesit[4] === 'ei'
+              select.form-control(type='select' id='teesi5' value=teesit[4] name='teesi5')
+                option(value=teesit[4] hidden)=teesit[4]
+                  option kyllä
+                  option ei
               div.form-group
                   label(for='nimi')
-                  textarea.form-control(type='text' id='nimi' value=perustelut[4] placeholder=perustelut[4] rows="10" max-value="250" name='perustelu5')
+                  textarea.form-control.register(type='text' id='teesi5' value=perustelut[4] placeholder=perustelut[4] rows="10" max-value="250" name='perustelu5')
             button.btn.btn-primary(type='submit') Lähetä vastaukset

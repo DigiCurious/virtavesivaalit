@@ -10,6 +10,12 @@ html,body {
   color: white;
 }
 
+h2{
+	font-family: Futura;
+	font-size: 18px;
+	text-align:left;
+}
+
 #kiitos{
 	text-align: center;
 	position: center;
@@ -19,10 +25,14 @@ html,body {
 }
 
 #CR{
-	height:250px;
+	height:175px;
 	width:auto;
 	margin-bottom:40px;
 	postion:center;
+}
+
+#italics{
+	font-size: 10px;
 }
 
 textarea.form-control.register{
@@ -100,6 +110,7 @@ h1{
 .row{
 	min-width:100%;
 	margin: 0px 0px 10px 0px;
+	padding: 0px 0px 0px 0px;
 }
 
 a#privacy{
