@@ -59,124 +59,124 @@ block content
                   img#logo(src="https://pbs.twimg.com/profile_images/887043027868536832/uw7gOmkU_400x400.jpg")
                 .col-md-2
                   img#logo(src="https://upload.wikimedia.org/wikipedia/fi/3/33/SuomenVapaa-ajankalastajienKeskusjarjesto.jpg")
-    .row
-      .col-md-12.col-md-offset-3
-        h2#teesi Tarkasta vastauksesi
-        img#profiili(src=url)
-        form(method='POST' action='/register/confirmation')
-          input.form-control(type='hidden' id='kuva' value=url placeholder=url name='kuva')
-          div.form-group
-            label(for='nimi') Nimi
-            input.form-control(type='text' id='nimi' value=user.name placeholder=user.name name='nimi')
-          div.form-group
-            label(for='puolue') Puolue
-            select.form-control(type='select' id='puolue' name='puolue')
-              option SDP
-              option Kokoomus
-              option Vihreät
-              option Vasemmistoliitto
-              option RKP
-              option Keskusta
-              option Perussuomalaiset
-              option Sininen tulevaisuus
-              option KD
-              option SKP
-              option KTP
-              option Liberaalipuolue
-              option Piraattipuolue
-              option Eläinoikeuspuolue
-              option Kansalaispuolue
-              option Feministinen puolue
-              option Itsenäisyyspuolue
-              option Suomen Kansa Ensin
-              option Seitsemän tähden liike
-              option Kansalaispuolue
-              option Feministinen puolue
+      .row
+        .col-md-12.col-md-offset-3
+          h2#teesi Tarkasta vastauksesi
+          img#profiili(src=url)
+          form(method='POST' action='/register/confirmation')
+            input.form-control(type='hidden' id='kuva' value=url placeholder=url name='kuva')
+            div.form-group
+              label(for='nimi') Nimi
+              input.form-control(type='text' id='nimi' value=user.name placeholder=user.name name='nimi')
+            div.form-group
+              label(for='puolue') Puolue
+              select.form-control(type='select' id='puolue' name='puolue')
+                option SDP
+                option Kokoomus
+                option Vihreät
+                option Vasemmistoliitto
+                option RKP
+                option Keskusta
+                option Perussuomalaiset
+                option Sininen tulevaisuus
+                option KD
+                option SKP
+                option KTP
+                option Liberaalipuolue
+                option Piraattipuolue
+                option Eläinoikeuspuolue
+                option Kansalaispuolue
+                option Feministinen puolue
+                option Itsenäisyyspuolue
+                option Suomen Kansa Ensin
+                option Seitsemän tähden liike
+                option Kansalaispuolue
+                option Feministinen puolue
 
-          div.form-group
-            label(for='vaalipiiri') Vaalipiiri
-            select.form-control(type='select' id='vaalipiiri' name='vaalipiiri')
-              option Uusimaa
-              option Varsinais-Suomi
-              option Satakunta
-              option Pirkanmaa
-              option Keskisuomi
-              option Savo-Karjala
-              option Lappi
-              option Helsinki
-              option Oulu
-              option Häme
-              option Kaakkois-Suomi
-              option Vaasa
-              option Keskisuomi
+            div.form-group
+              label(for='vaalipiiri') Vaalipiiri
+              select.form-control(type='select' id='vaalipiiri' name='vaalipiiri')
+                option Uusimaa
+                option Varsinais-Suomi
+                option Satakunta
+                option Pirkanmaa
+                option Keskisuomi
+                option Savo-Karjala
+                option Lappi
+                option Helsinki
+                option Oulu
+                option Häme
+                option Kaakkois-Suomi
+                option Vaasa
+                option Keskisuomi
 
-          .teesi
-            p#teesi.
-               Haluan Vesilain uudistettavaksi tulevalla hallituskaudella, jotta vaelluskalojen ja muun vesiluonnon elinvoimaisuutta voidaan tehokkaammin edistää.
-            div.form-group
-              label(for='teesi1')
-              select.form-control(type='select' value=teesit[0] id='puolue' placeholder=teesit[0] name='teesi1')
-                option(value=teesit[0] hidden)=teesit[0]
-                option kyllä
-                option ei
-            if teesit[0] === 'ei'
+            .teesi
+              p#teesi.
+                 Haluan Vesilain uudistettavaksi tulevalla hallituskaudella, jotta vaelluskalojen ja muun vesiluonnon elinvoimaisuutta voidaan tehokkaammin edistää.
               div.form-group
-                label(for='nimi')
-                textarea.form-control(type='text' id='nimi' rows="10" max-value="250" value=perustelut[0] placeholder=perustelut[0] name='perustelu1')
-          .teesi
-            p#teesi.
-               Haluan seuraavaan hallitusohjelmaan tavoitteeksi pienvesivoimaloiden (< 10 MW)
-               toiminnan hallitun alasajon, aloittaen minivesivoimaa (< 1MW) tuottavista laitoksista
+                label(for='teesi1')
+                select.form-control(type='select' value=teesit[0] id='puolue' placeholder=teesit[0] name='teesi1')
+                  option(value=teesit[0] hidden)=teesit[0]
+                  option kyllä
+                  option ei
+              if teesit[0] === 'ei'
+                div.form-group
+                  label(for='nimi')
+                  textarea.form-control(type='text' id='nimi' rows="10" max-value="250" value=perustelut[0] placeholder=perustelut[0] name='perustelu1')
+            .teesi
+              p#teesi.
+                 Haluan seuraavaan hallitusohjelmaan tavoitteeksi pienvesivoimaloiden (< 10 MW)
+                 toiminnan hallitun alasajon, aloittaen minivesivoimaa (< 1MW) tuottavista laitoksista
+              div.form-group
+                label(for='vaalipiiri')
+                select.form-control(type='select' id='puolue' placeholder=teesit[1] value=teesit[1] name='teesi2')
+                  option(value=teesit[1] hidden)=teesit[1]
+                  option kyllä
+                  option ei
+              if teesit[1] === 'ei'
+                div.form-group
+                  label(for='nimi')
+                  textarea.form-control(type='text' id='nimi' value=perustelut[1] placeholder=perustelut[1] name='perustelu2')
+            .teesi
+              p#teesi.
+                 Haluan että pienehköjen (10-20 MW), keskikokoisten (20-60 MW) ja suurten (< 100 MW) vesivoimaloidemme voimassa olevien kalatalousvelvoitteiden ajanmukaistamista tehostetaan huomattavasti seuraavan hallituskauden aikana. Voimaloiden vanhat istutusvelvoitteet on muutettava kalojen luontaista elinkiertoa tukeviksi toimenpiteiksi. Jo käynnistyneet velvoitteiden muutokset (mm. Kemijoki ja Iijoki) on saatettava loppuun
+                 välittömästi. Hallitusohjelmaan tulee tehdä kirjaus voimaloiden vesitalouslupiin lisättävistä kalan kulun mahdollistavista ratkaisuista ja kompensaatiotoimista vesivoiman vuoksi menetettyjen kalojen lisääntymisalueiden osalta, siltä osin kuin ne niistä puuttuvat.
+              div.form-group
+                label(for='vaalipiiri')
+                select.form-control(type='select' id='puolue' value=teesit[2] name='teesi3')
+                  option(value=teesit[2] hidden)=teesit[2]
+                  option kyllä
+                  option ei
+              if teesit[2] === 'ei'
+                div.form-group
+                  label(for='nimi')
+                  textarea.form-control(type='text' id='nimi' value=perustelut[2] placeholder=perustelut[2] name='perustelu3')
+            .teesi
+              p#teesi.
+                 Haluan viranomaispakkokeinojen soveltamista voimassa olevien, mutta toteuttamatta jääneiden kalatien rakentamisvelvoitteiden toimeenpanon edistämiseksi. Lisäksi haluan, että viranomaiset ryhtyvät vaatimaan kalateitä kalatien salliviin velvoitteisiin.
+              div.form-group
+                label(for='vaalipiiri')
+                select.form-control(type='select' id='puolue' value=teesit[3] name='teesi4')
+                  option(value=teesit[3] hidden)=teesit[3]
+                  option kyllä
+                  option ei
+              if teesit[3] === 'ei'
+                div.form-group
+                  label(for='nimi')
+                  textarea.form-control(type='text' id='nimi' value=perustelut[3] placeholder=perustelut[3] name='perustelu4')
+            .teesi
+              p#teesi.
+                Haluan että vaelluskalojen palauttaminen säilyy myös tulevan hallituksen
+                ’kärkitavoitteissa’, ja että uhanalaisten kalojen elvyttämiseen vaadittavat toimet ulotetaan koskemaan myös kalastuspolitiikkaamme (liialliseen verkkomäärään puuttuminen, uudet biologisesti merkityksellisemmät kalojen alamitat, kestävät kalastuskiintiöt jne). Elinympäristönä virtavesien ennallistamiselle tulee asettaa kunnianhimoiset kansalliset
+                tavoitteet.
             div.form-group
               label(for='vaalipiiri')
-              select.form-control(type='select' id='puolue' placeholder=teesit[1] value=teesit[1] name='teesi2')
-                option(value=teesit[1] hidden)=teesit[1]
+              select.form-control(type='select' id='puolue' value=teesit[4] name='teesi5')
+                option(value=teesit[4] hidden)=teesit[0]
                 option kyllä
                 option ei
-            if teesit[1] === 'ei'
+            if teesit[4] === 'ei'
               div.form-group
-                label(for='nimi')
-                textarea.form-control(type='text' id='nimi' value=perustelut[1] placeholder=perustelut[1] name='perustelu2')
-          .teesi
-            p#teesi.
-               Haluan että pienehköjen (10-20 MW), keskikokoisten (20-60 MW) ja suurten (< 100 MW) vesivoimaloidemme voimassa olevien kalatalousvelvoitteiden ajanmukaistamista tehostetaan huomattavasti seuraavan hallituskauden aikana. Voimaloiden vanhat istutusvelvoitteet on muutettava kalojen luontaista elinkiertoa tukeviksi toimenpiteiksi. Jo käynnistyneet velvoitteiden muutokset (mm. Kemijoki ja Iijoki) on saatettava loppuun
-               välittömästi. Hallitusohjelmaan tulee tehdä kirjaus voimaloiden vesitalouslupiin lisättävistä kalan kulun mahdollistavista ratkaisuista ja kompensaatiotoimista vesivoiman vuoksi menetettyjen kalojen lisääntymisalueiden osalta, siltä osin kuin ne niistä puuttuvat.
-            div.form-group
-              label(for='vaalipiiri')
-              select.form-control(type='select' id='puolue' value=teesit[2] name='teesi3')
-                option(value=teesit[2] hidden)=teesit[2]
-                option kyllä
-                option ei
-            if teesit[2] === 'ei'
-              div.form-group
-                label(for='nimi')
-                textarea.form-control(type='text' id='nimi' value=perustelut[2] placeholder=perustelut[2] name='perustelu3')
-          .teesi
-            p#teesi.
-               Haluan viranomaispakkokeinojen soveltamista voimassa olevien, mutta toteuttamatta jääneiden kalatien rakentamisvelvoitteiden toimeenpanon edistämiseksi. Lisäksi haluan, että viranomaiset ryhtyvät vaatimaan kalateitä kalatien salliviin velvoitteisiin.
-            div.form-group
-              label(for='vaalipiiri')
-              select.form-control(type='select' id='puolue' value=teesit[3] name='teesi4')
-                option(value=teesit[3] hidden)=teesit[3]
-                option kyllä
-                option ei
-            if teesit[3] === 'ei'
-              div.form-group
-                label(for='nimi')
-                textarea.form-control(type='text' id='nimi' value=perustelut[3] placeholder=perustelut[3] name='perustelu4')
-          .teesi
-            p#teesi.
-              Haluan että vaelluskalojen palauttaminen säilyy myös tulevan hallituksen
-              ’kärkitavoitteissa’, ja että uhanalaisten kalojen elvyttämiseen vaadittavat toimet ulotetaan koskemaan myös kalastuspolitiikkaamme (liialliseen verkkomäärään puuttuminen, uudet biologisesti merkityksellisemmät kalojen alamitat, kestävät kalastuskiintiöt jne). Elinympäristönä virtavesien ennallistamiselle tulee asettaa kunnianhimoiset kansalliset
-              tavoitteet.
-          div.form-group
-            label(for='vaalipiiri')
-            select.form-control(type='select' id='puolue' value=teesit[4] name='teesi5')
-              option(value=teesit[4] hidden)=teesit[0]
-              option kyllä
-              option ei
-          if teesit[4] === 'ei'
-            div.form-group
-                label(for='nimi')
-                textarea.form-control(type='text' id='nimi' value=perustelut[4] placeholder=perustelut[4] name='perustelu5')
-          button.btn.btn-primary(type='submit') Lähetä vastaukset
+                  label(for='nimi')
+                  textarea.form-control(type='text' id='nimi' value=perustelut[4] placeholder=perustelut[4] name='perustelu5')
+            button.btn.btn-primary(type='submit') Lähetä vastaukset
