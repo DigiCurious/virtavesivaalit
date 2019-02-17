@@ -93,6 +93,8 @@ h1{
 .display-4{
 	margin-bottom: 30px;
 	font-size: 60;
+	position:center
+	text-align:center;
 }
 
 #ehdokas{
