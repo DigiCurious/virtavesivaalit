@@ -89,7 +89,7 @@ router.post('/confirmation', function(req, res, next) {
   var uusiehdokas = new Ehdokas({ puolue: puolue, vaalipiiri: vaalipiiri, name:name, kuva:kuva, teesit:teesit , perustelut: perustelut});
   uusiehdokas.save(function (err) {
   if (err){console.log(err)}else{
-  	res.redirect('/kiitos');
+  	res.redirect('/register/kiitos');
   }
   });
  });
