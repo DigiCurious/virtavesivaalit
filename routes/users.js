@@ -71,7 +71,7 @@ router.post('/confirmation', function(req, res, next) {
   var vaalipiiri = req.body.vaalipiiri;
   var name = req.body.nimi;
   var kuva = req.body.kuva;
-  
+
   var teesit = new Array;
   teesit.push(req.body.teesi1);
   teesit.push(req.body.teesi2);
@@ -89,10 +89,14 @@ router.post('/confirmation', function(req, res, next) {
   var uusiehdokas = new Ehdokas({ puolue: puolue, vaalipiiri: vaalipiiri, name:name, kuva:kuva, teesit:teesit , perustelut: perustelut});
   uusiehdokas.save(function (err) {
   if (err){console.log(err)}else{
-  	res.redirect('/');
+  	res.redirect('/kiitos');
   }
   });
  });
+
+router.get('/kiitos', function(req,res,next){
+	res.render("kiitosb");
+});
 
 
 function ensureAuthenticated(req, res, next) {
