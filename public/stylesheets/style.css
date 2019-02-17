@@ -1,11 +1,28 @@
-body {
+
+
+html,body {
   background-image: url("../images/cr_vaalikone_BG.png");
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: center;
+  background-position: 0 0;
   font-family: Georgia;
   margin: auto;
   color: white;
+}
+
+#kiitos{
+	text-align: center;
+	position: center;
+	font-family: Futura;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+#CR{
+	height:250px;
+	width:auto;
+	margin-bottom:40px;
+	postion:center;
 }
 
 textarea.form-control{
