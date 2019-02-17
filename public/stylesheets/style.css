@@ -25,7 +25,7 @@ html,body {
 	postion:center;
 }
 
-textarea.form-control{
+textarea.form-control.register{
 	display:none;
 }
 
