@@ -35,7 +35,7 @@ router.post('/', function(req,res,next){
 	  console.log("perustelut array = " + perustelut);
 	  res.cookie('teesit', teesit);
 	  res.cookie('perustelut', perustelut);
-	  res.redirect("/register/confirmation");
+	  res.redirect("/register210418/confirmation");
 })
 
 router.get('/confirmation', ensureAuthenticated, function(req, res, next) {
@@ -89,7 +89,7 @@ router.post('/confirmation', function(req, res, next) {
   var uusiehdokas = new Ehdokas({ puolue: puolue, vaalipiiri: vaalipiiri, name:name, kuva:kuva, teesit:teesit , perustelut: perustelut});
   uusiehdokas.save(function (err) {
   if (err){console.log(err)}else{
-  	res.redirect('/register/kiitos');
+  	res.redirect('/register210418/kiitos');
   }
   });
  });

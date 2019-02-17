@@ -95,7 +95,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/register', usersRouter);
+app.use('/register210418', usersRouter);
 app.use('/auth', auth);
 
 
