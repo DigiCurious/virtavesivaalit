@@ -3,7 +3,10 @@ extends layout
 block content
 	.jumbotron.jumbtron-fluid
 		.container
-			h1.display-4 #VIRTAVESIVAALIT
+			h1.display-4 VIRTAVESIVAALIT.FI
+				h2#hashtag #virtavesivaalit
+			p.lead#hero
+				<strong>Virtavesivaalit.fi</strong> on vuoden 2019 eduskuntavaaleja varten rakennettu vaalikone, joka on lähtöisin Concrete Reasons -dokumenttielokuvan tekijöiltä ja se on tehty yhteistyössä <strong>WWF Suomen, Suomen Luonnonsuojeluliiton</strong> ja <strong>Suomen Vapaa-ajankalastajien Keskusjärjestön</strong> kanssa. Se haastaa ehdokkaita tärkeiden, maamme hyvinvointiin liittyvien kysymysten äärellä ja auttaa äänestäjää valitsemaan omille arvoilleen sopivan ehdokkaan.
 			.row
 				.col-md-6
 					h2 Mistä on kyse?
@@ -61,7 +64,7 @@ block content
 
 	.container
 		form(method='POST' action='/register210418/confirmation')
-			div.form-group
+			div.form-group.etusivu
 				label(for='puolue') Puolue
 				select.form-control(type='select' id='puolue' name='puolue')
 					option SDP
@@ -86,7 +89,7 @@ block content
 					option Kansalaispuolue
 					option Feministinen puolue
 
-			div.form-group
+			div.form-group.etusivu
 				label(for='vaalipiiri') Vaalipiiri
 				select.form-control(type='select' id='vaalipiiri' name='vaalipiiri')
 					option Uusimaa
@@ -106,7 +109,7 @@ block content
 
 	.container#ehdokkaat
 		each ehdokas in ehdokkaat
-			.col-md-2
+			.col-md-2.col-sm-6
 				img#index(src=ehdokas.kuva)
 				p#ehdokas=ehdokas.name + ", " + ehdokas.puolue + ", " + ehdokas.vaalipiiri
 				each teesi in ehdokas.teesit
