@@ -14,7 +14,7 @@ router.get('/', function(req, res) {
   		console.log(err)
   	}else{
   		//console.log(ehdokkaat[3].kuva);
-  		res.render("kiitos", { ehdokkaat: ehdokkaat})
+  		res.render("index", { ehdokkaat: ehdokkaat})
   	}
   });
 });

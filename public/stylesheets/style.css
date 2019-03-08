@@ -8,7 +8,39 @@ html,body {
   font-family: Georgia;
   margin: auto;
   color: white;
+  font-size: 18px;
 }
+
+#ehdokkaat{
+	height:500px;
+	overflow: scroll;
+}
+
+.container{
+	margin-bottom: 40px;
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.col-md-2{
+	text-align: center;
+    padding: 20px;
+    margin: 17px;
+}
+
+#etusivunteesit{
+	height: 400px;
+	overflow: scroll;
+}
+
+#rowteesi{
+	padding-bottom: 50px;
+	padding-top: 50px;
+	border-style: solid;
+	border-width: 0px 0px 2px 0px;
+	border-color: white;
+}
+
 
 h2{
 	font-family: Futura;
@@ -24,15 +56,25 @@ h2{
 	font-weight: bold;
 }
 
+h2#hashtag{
+	text-align: center;
+	margin:auto;
+}
+
+.container .jumbotron, .container-fluid .jumbotron{
+	padding:0px;
+}
+
 #CR{
 	height:175px;
 	width:auto;
 	margin-bottom:40px;
+	margin-top:40px;
 	postion:center;
 }
 
 #italics{
-	font-size: 10px;
+	font-size: 14px;
 }
 
 textarea.form-control.register{
@@ -40,12 +82,13 @@ textarea.form-control.register{
 }
 
 .jumbotron p{
-	font-size: 16px;
 	text-align: left;
+	padding-right:0px;
 }
 
-.container.jumbotron.jumbotron-fluid {
-	padding:0;}
+.container > .jumbotron-fluid{
+	padding-right: 0px;
+}
 
 #logo{
 	height: 100px;
@@ -76,6 +119,7 @@ textarea.form-control.register{
 .jumbotron{
 	background-color: rgba(0,0,0,0);
 	text-align: center;
+	padding-right: 0px;
 }
 
 #profiili{
@@ -96,7 +140,7 @@ h1{
 
 #teesi{
 	font-family: Futura;
-	font-size: 18px;
+	font-size: 24px;
 	font-weight: bold;
 }
 
@@ -109,7 +153,7 @@ h1{
 
 .row{
 	min-width:100%;
-	margin: 0px 0px 10px 0px;
+	margin: 0px 0px 20px 0px;
 	padding: 0px 0px 0px 0px;
 }
 
@@ -123,11 +167,26 @@ a#privacy{
 	font-weight: bold;
 }
 
-.form-group{
-	margin-bottom: 30px;
+option{
+	font-family: futura;
 }
 
-.col-md-1.col-md-offset-3{
+.form-group{
+	margin-bottom: 30px;
+	float: left;
+	width: 30%;
+	padding-left: 40px;
+}
+
+strong{
+	font-family: futura;
+}
+
+label{
+	font-family: futura;
+}
+
+.col-md-2{
   border-radius: 5px;
   margin: 0px;
 }
@@ -140,7 +199,7 @@ a#privacy{
 }
 
 .form-control{
-	width:50%;
+	width:80%;
 }
 
 input[type="text"] {
@@ -148,7 +207,7 @@ input[type="text"] {
 }
 
 a {
-  color: #FFFFFF;
+  color: #eec507;
 }
 
 a.btn-social{
@@ -157,5 +216,6 @@ a.btn-social{
 }
 
 .btn.btn-primary{
-	margin-bottom: 50px;
+	width: 20%;
+	margin-top: 30px;
 }
