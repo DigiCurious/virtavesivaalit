@@ -1,13 +1,13 @@
 extends layout
 
 block content
-  .container
-    .jumbotron
+  .jumbotron.jumbotron-fluid
+    .container
       h1.display-4.m-b-2 Kiitos vastauksistasi!
-      p.lead.
+      p.lead#hero.
         Ystävällisesti allekirjoita vastauksesi kirjautumalla sisään Facebook tunnuksillasi ja tarkasta vielä tietosi vahvistussivulla.
         
-      div.form-group
-        a.btn.btn-block.btn-social.btn-facebook(href='/auth/facebook')
+      div.form-group.login
+        a.btn.btn-social(href='/auth/facebook')
           i.fa.fa-facebook.fa-fw
           |Allekirjoita

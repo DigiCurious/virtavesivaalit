@@ -12,14 +12,14 @@ html,body {
 }
 
 #ehdokkaat{
-	height:500px;
+	height:100vh;
 	overflow: scroll;
 }
 
 .container{
 	margin-bottom: 40px;
-	padding-left: 0px;
-	padding-right: 0px;
+	padding-left: 50px;
+	padding-right: 50px;
 }
 
 .col-md-2{
@@ -29,7 +29,7 @@ html,body {
 }
 
 #etusivunteesit{
-	height: 400px;
+	height: 100vh;
 	overflow: scroll;
 }
 
@@ -164,7 +164,8 @@ h1{
 }
 
 a#privacy{
-	margin-top:30px;
+	margin-top:300px;
+	padding-top: 100px;
 }
 
 #ehdokas{
@@ -220,12 +221,28 @@ a {
   color: #eec507;
 }
 
-a.btn-social{
+.login{
+	margin:auto;
+	display: inline-block;
+	position: center;
+	width: 100%;
+}
+
+a.btn.btn-social{
+	text-align: center;
+	margin:auto;
+	position: center;
 	color: #3b5998;
 	background-color: #FFFFFF;
+	width:50%;
+}
+
+.btn.btn-primary#filtteri{
+	width: 20%;
+	margin-top: 30px;
 }
 
 .btn.btn-primary{
 	width: 20%;
-	margin-top: 30px;
+	display: block;
 }
