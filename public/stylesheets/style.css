@@ -8,8 +8,9 @@ html,body {
   font-family: Georgia;
   margin: auto;
   color: white;
-  font-size: 18px;
+  font-size: 16px;
 }
+
 
 .embed-container {
   position: relative;
@@ -28,6 +29,8 @@ html,body {
 #ehdokkaat{
 	height:100vh;
 	overflow: scroll;
+	padding:0px;
+	width: 100%;
 }
 
 .container{
@@ -50,15 +53,34 @@ html,body {
 #rowteesi{
 	padding-bottom: 50px;
 	padding-top: 50px;
-	border-style: solid;
-	border-width: 0px 0px 2px 0px;
-	border-color: white;
+	margin-bottom: 0px;
 }
 
 
 #hero{
 	padding: 30px 100px 30px 100px;
 	text-align: center;
+}
+
+#teesi-col{
+	padding-top: 0px;
+	padding-bottom: 0px;
+}
+
+li{
+	margin-top: 5px;
+}
+
+li#nav{
+	border: solid white 1px;
+	border-width: 0px 1px 0px 0px;
+}
+
+.navbar-nav>li>a{
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin-top: 15px;
+	margin-bottom: 15px;
 }
 
 h2{
@@ -85,12 +107,38 @@ h2#hashtag{
 	padding:0px;
 }
 
+.navbar{
+	height: 60px;
+	background-color: rgba(0,0,0,0.8);
+	border-width: 0px;
+	color:white;
+}
+
+.navbar-default .navbar-nav>li>a{
+    color: #ffffff;
+    font-size: 12px;
+}
+
+.navbar.center{
+	text-align: center;
+}
+.navbar.center .navbar-inner .nav {
+    display:inline-block;
+    float: none;
+}
+
 #CR{
 	height:175px;
 	width:auto;
 	margin-bottom:40px;
 	margin-top:40px;
 	postion:center;
+}
+
+#CR-nav{
+	height:50px;
+	width:auto;
+	margin: 5px 5px 5px 0px;
 }
 
 #italics{
@@ -160,15 +208,15 @@ h1{
 
 #teesi{
 	font-family: Futura;
-	font-size: 24px;
-	font-weight: bold;
+	font-size: 21px;
 }
 
 .display-4{
+	padding-bottom: 30px;
+	padding-top:60px;
 	margin-bottom: 10px;
 	font-size: 60;
 	position:center
-	text-align:center;
 }
 
 .row{
