@@ -13,6 +13,8 @@ html,body {
 
 
 .embed-container {
+  width: 80%;
+  margin:auto;
   position: relative;
   padding-bottom: 56.25%;
   overflow: hidden;
