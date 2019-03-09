@@ -15,6 +15,15 @@ router.post('/', function(req,res){
 })
 
 router.get('/', function(req, res) {
+  
+  function isEmpty(obj) {
+    for(var key in obj) {
+        if(obj.hasOwnProperty(key))
+            return false;
+    }
+    return true;
+  }
+  console.log(req.query);
 
   var puolue = String(req.query.puolue);
   var vaalipiiri = String(req.query.vaalipiiri);
@@ -31,17 +40,30 @@ router.get('/', function(req, res) {
   /*puolue = JSON.stringify(req.cookies.puolue);
   vaalipiiri = JSON.stringify(req.cookies.vaalipiiri);*/
  
-  console.log(puolue);
-  Ehdokas.find({$and:[{puolue: puolue},{vaalipiiri:{ $exists: true }}]}, function(err, ehdokkaat){
-  	if(err){
-  		console.log(err)
-  	}else{
-  		console.log(ehdokkaat);
-  		console.log(puolue);
-  		res.render("index", { ehdokkaat: ehdokkaat })
-  	}
-  });
-  });
+  if(isEmpty(req.query)){
+  	  console.log("etsi kaikki");
+	  Ehdokas.find({}, function(err, ehdokkaat){
+	  	if(err){
+	  		console.log(err)
+	  	}else{
+	  		console.log(ehdokkaat);
+	  		console.log(puolue);
+	  		res.render("index", { ehdokkaat: ehdokkaat })
+	  	}
+  })
+	}else{
+		console.log("etsi hakuehdoilla");
+		Ehdokas.find({$and:[{puolue: puolue},{vaalipiiri:vaalipiiri}]}, function(err, ehdokkaat){
+	  	if(err){
+	  		console.log(err)
+	  	}else{
+	  		console.log(ehdokkaat);
+	  		console.log(puolue);
+	  		res.render("index", { ehdokkaat: ehdokkaat })
+	  	}
+	  });
+  }
+});
 
 
 
