@@ -8,17 +8,31 @@ router.get('/privacy', function(req, res, next){
 	res.render("privacy");
 });
 
-router.get('/', function(req, res) {
-  
-  var puolue;
-  var vaalipiiri;
+router.post('/', function(req,res){
+	var puolue = "?puolue=" + req.body.puolue + "&"
+	var vaalipiiri = "vaalipiiri=" + req.body.vaalipiiri
+	res.redirect("/" + puolue + vaalipiiri);
+})
 
-  puolue = JSON.stringify(req.cookies.puolue);
-  vaalipiiri = JSON.stringify(req.cookies.vaalipiiri);
+router.get('/', function(req, res) {
+
+  var puolue = String(req.query.puolue);
+  var vaalipiiri = String(req.query.vaalipiiri);
+
+  if(String(req.query.puolue) == "Kaikki"){
+  	puolue = { $exists: true }
+  }
+  if(String(req.query.vaalipiiri) == "Kaikki"){
+  	vaalipiiri = { $exists: true }
+  }
+
+  console.log(puolue)
+  console.log(vaalipiiri)
+  /*puolue = JSON.stringify(req.cookies.puolue);
+  vaalipiiri = JSON.stringify(req.cookies.vaalipiiri);*/
  
   console.log(puolue);
-
-  Ehdokas.find({}, function(err, ehdokkaat){
+  Ehdokas.find({$and:[{puolue: puolue},{vaalipiiri:{ $exists: true }}]}, function(err, ehdokkaat){
   	if(err){
   		console.log(err)
   	}else{
@@ -29,13 +43,6 @@ router.get('/', function(req, res) {
   });
   });
 
-router.post('/', function(req,res){
-	var puolue = req.body.puolue
-	var vaalipiiri = req.body.vaalipiiri
 
-	res.cookie('puolue', puolue);
-	res.cookie('vaalipiiri', vaalipiiri);
-	res.redirect("/");
-})
 
 module.exports = router;
