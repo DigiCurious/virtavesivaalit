@@ -50,6 +50,8 @@ html,body {
 #etusivunteesit{
 	height: 100vh;
 	overflow: scroll;
+	padding: 0px;
+	width: 100%;
 }
 
 #rowteesi{
