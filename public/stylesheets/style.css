@@ -38,8 +38,6 @@ html,body {
 }
 
 #ehdokkaat{
-	height:60vh;
-	overflow: scroll;
 	padding:0px;
 	width: 100%;
 }
@@ -57,28 +55,31 @@ html,body {
 }
 
 #etusivunteesit{
-	height: 100vh;
-	overflow: scroll;
 	padding: 0px;
 	width: 100%;
 }
 
-#rowteesi{
-	padding-bottom: 50px;
-	padding-top: 50px;
-	margin-bottom: 0px;
+.row.rowteesi{
+	padding-bottom: 150px;
+	padding-top: 200px;
+	margin-bottom: 50px;
+	height: 640px;
 }
 
+
+p#teesitausta{
+	font-size: 600px;
+	color: rgba(255,255,255,0.3);
+	width: 100%;
+	max-height: 50%;
+}
 
 #hero{
 	padding: 30px 100px 30px 100px;
 	text-align: center;
 }
 
-#teesi-col{
-	padding-top: 0px;
-	padding-bottom: 0px;
-}
+
 
 li{
 	margin-top: 5px;
@@ -90,8 +91,7 @@ li#nav{
 }
 
 .navbar-nav>li>a{
-	padding-top: 0px;
-	padding-bottom: 0px;
+	padding: 0px 30px 0px 30px;
 	margin-top: 15px;
 	margin-bottom: 15px;
 }
@@ -127,9 +127,28 @@ h2#hashtag{
 	color:white;
 }
 
+#teesinav{
+	font-size: 36px;
+	height: 60px;
+	background-color: rgba(0,0,0,0);
+	border-width: 0px;
+	color:white;
+	margin-bottom: 70px;
+}
+
+
 .navbar-default .navbar-nav>li>a{
     color: #ffffff;
-    font-size: 12px;
+}
+
+.navbar-default .navbar-nav .active>li>a{
+    color: #eeeeee;
+    font-size: 100;
+    background-color: rgb(0,0,0,0);
+}
+
+.navbar-default .navbar-nav>.active>a{
+	background-color: rgb(0,0,0,0);
 }
 
 .navbar.center{
@@ -139,6 +158,7 @@ h2#hashtag{
     display:inline-block;
     float: none;
 }
+
 
 #CR{
 	height:175px;
@@ -227,7 +247,7 @@ h1{
 
 #teesi{
 	font-family: Futura;
-	font-size: 21px;
+	font-size: 28px;
 }
 
 .display-4{
