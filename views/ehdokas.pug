@@ -1,0 +1,94 @@
+extends layout
+
+block content
+
+  nav.navbar.navbar-default.center.navbar-fixed-top
+    .container-fluid
+      .navbar-header
+        button.navbar-toggle.collapsed(type="collapse" data-toggle="collapse" target="#bs-example-navbar-collapse-1" aria-expanded="false")
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+      .collapse.navbar-collapse#bs-example-navbar-collapse-1
+        .navbar-inner
+          ul.nav.navbar-nav
+            li#nav
+              a(href="/") Virtavesivaalit.fi
+            li#nav
+              a(href="/#etusivuteesit") Teesit
+            li#nav
+              a(href="/#ehdokkaatt") Ehdokkaat
+            li
+              a(href="/#leffa") Concrete Reasons
+
+  .jumbotron.jumbtron-fluid#etusivu
+    .container
+      img#profiili2(src=ehdokas.kuva)
+      h1.display-4=ehdokas.name
+      h2#hashtag=ehdokas.puolue + ", " + ehdokas.vaalipiiri
+          
+  .container#etusivuteesit
+    .jumbotron.jumbotron-fluid
+      h2#vastaus Vastaukseni
+      .row#rowteesi
+        .col-md-6#teesi-col
+            p#teesi.
+              1. Haluan vesilain uudistettavaksi tulevalla hallituskaudella,
+              jotta vaelluskalojen ja muun vesiluonnon elinvoimaisuutta voidaan tehokkaammin edistää.
+        .col-md-6
+          .vastaus
+              if ehdokas.teesit[0] === 'kyllä'
+                  h2#vastaus Kyllä
+              else
+                  h2#vastaus Ei
+                  p#vastaus=ehdokas.perustelut[0]
+
+      .row#rowteesi
+        .col-md-6#teesi-col
+            p#teesi.
+              2. Haluan seuraavaan hallitusohjelmaan tavoitteeksi alle pienvesivoimaloiden (< 5 MW) toiminnan hallitun alasajon, aloittaen minivesivoimaa (<1MW) tuottavista laitoksista.
+        .col-md-6
+          .vastaus
+              if ehdokas.teesit[1] === 'kyllä'
+                  h2#vastaus Kyllä
+              else
+                  h2#vastaus Ei
+                  p#vastaus=ehdokas.perustelut[1]
+
+      .row#rowteesi
+        .col-md-6#teesi-col
+            p#teesi.
+              3. Haluan että pienehköjen (10-20 MW), keskikokoisten (20-60 MW) ja suurten (> 100 MW) vesivoimaloidemme voimassa olevien kalatalousvelvoitteiden ajanmukaistamista tehostetaan huomattavasti seuraavan hallituskauden aikana. Voimaloiden vanhat istutusvelvoitteet on muutettava kalojen luontaista elinkiertoa tukeviksi toimenpiteiksi. Jo käynnistyneet velvoitteiden muutokset on saatettava loppuun välittömästi. Hallitusohjelmaan tulee tehdä kirjaus voimaloiden vesitalouslupiin lisättävistä kalan kulun mahdollistavista ratkaisuista ja kompensaatiotoimista vesivoiman vuoksi menetettyjen kalojen lisääntymisalueiden osalta, siltä osin kuin ne niistä puuttuvat.
+        .col-md-6
+          .vastaus
+              if ehdokas.teesit[2] === 'kyllä'
+                  h2#vastaus Kyllä
+              else
+                  h2#vastaus Ei
+                  p#vastaus=ehdokas.perustelut[2]
+      .row#rowteesi
+        .col-md-6#teesi-col
+            p#teesi.
+              4. Haluan viranomaispakkokeinojen soveltamista voimassa olevien, mutta toteuttamatta jääneiden kalatien rakentamisvelvoitteiden toimeenpanon edistämiseksi. Lisäksi haluan, että viranomaiset ryhtyvät vaatimaan kalateitä kalatien salliviin velvoitteisiin.
+        .col-md-6
+          .vastaus
+              if ehdokas.teesit[3] === 'kyllä'
+                  h2#vastaus Kyllä
+              else
+                  h2#vastaus Ei
+                  p#vastaus=ehdokas.perustelut[3]
+
+      .row#rowteesi
+        .col-md-6#teesi-col
+            p#teesi.
+              5. Haluan että vaelluskalojen palauttaminen säilyy myös tulevan hallituksen kärkitavoitteissa, ja että uhanalaisten kalojen elvyttämiseen vaadittavat toimet ulotetaan koskemaan myös kalastuspolitiikkaamme (liialliseen verkkomäärään puuttuminen, uudet biologisesti merkityksellisemmät kalojen alamitat, kestävät kalastuskiintiöt jne). Elinympäristönä virtavesien ennallistamiselle tulee asettaa kunnianhimoiset kansalliset tavoitteet.
+        .col-md-6
+          .vastaus
+              if ehdokas.teesit[4] === 'kyllä'
+                  h2#vastaus Kyllä
+              else
+                  h2#vastaus Ei
+                  p#vastaus=ehdokas.perustelut[4]
+        
+  a#privacy(href="/privacy") virtavesivaalit.fi/privacy

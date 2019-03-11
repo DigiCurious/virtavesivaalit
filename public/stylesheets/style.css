@@ -11,6 +11,15 @@ html,body {
   font-size: 16px;
 }
 
+.glyphicon#ehdokassivu{
+	height: 150px;
+	width:100%;
+}
+
+#vastaus{
+	padding-left: 15px;
+	margin-top: 0px;
+}
 
 .embed-container {
   width: 80%;
@@ -29,7 +38,7 @@ html,body {
 }
 
 #ehdokkaat{
-	height:100vh;
+	height:60vh;
 	overflow: scroll;
 	padding:0px;
 	width: 100%;
@@ -89,7 +98,7 @@ li#nav{
 
 h2{
 	font-family: Futura;
-	font-size: 24px;
+	font-size: 28px;
 	text-align:left;
 }
 
@@ -198,6 +207,12 @@ textarea.form-control.register{
 	height: 200px;
  	width: 200px;
  	margin: 50px 0px 50px 0px;
+ 	border-radius: 100px;
+}
+#profiili2{
+	height: 200px;
+ 	width: 200px;
+ 	margin: 50px 0px 0px 0px;
  	border-radius: 100px;
 }
 

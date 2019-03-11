@@ -145,7 +145,8 @@ block content
 		.container#ehdokkaat
 			each ehdokas in ehdokkaat
 				.col-md-2.col-sm-4
-					img#index(src=ehdokas.kuva)
+					a(href = "/ehdokas/" + ehdokas.id)
+						img#index(src=ehdokas.kuva)
 					p#ehdokas=ehdokas.name + ", " + ehdokas.puolue + ", " + ehdokas.vaalipiiri
 					each teesi in ehdokas.teesit
 							if teesi === 'kyllä'

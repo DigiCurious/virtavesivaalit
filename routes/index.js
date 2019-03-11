@@ -11,7 +11,7 @@ router.get('/privacy', function(req, res, next){
 router.post('/', function(req,res){
 	var puolue = "?puolue=" + req.body.puolue + "&"
 	var vaalipiiri = "vaalipiiri=" + req.body.vaalipiiri
-	res.redirect("/" + puolue + vaalipiiri);
+	res.redirect("/" + puolue + vaalipiiri + "#ehdokkaatt");
 })
 
 router.get('/', function(req, res) {
@@ -63,6 +63,16 @@ router.get('/', function(req, res) {
 	  	}
 	  });
   }
+});
+
+router.get("/ehdokas/:id", function(req,res){
+    Ehdokas.findById(req.params.id, function(err, ehdokas){
+        if(err){
+            console.log(err);
+        }else{
+            res.render("ehdokas", {ehdokas: ehdokas});
+        }
+    });
 });
 
 
