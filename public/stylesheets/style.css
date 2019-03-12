@@ -120,10 +120,20 @@ h2#hashtag{
 }
 
 .navbar{
-	height: 100px;
+	height: 110px;
 	background-color: rgba(0,0,0,0.8);
 	border-width: 0px;
 	color:white;
+}
+
+.navbar-header{
+	font-family: futura;
+	line-height: 8px;
+	margin-top: 15px;
+}
+
+span{
+	font-size: 10px;
 }
 
 #teesinav{
@@ -160,9 +170,12 @@ h2#hashtag{
 .navbar.center .navbar-inner .nav {
     display:inline-block;
     float: none;
-    margin-top: 20px;
+    margin-top: 25px;
 }
 
+#center{
+	margin-left: -90px;
+}
 
 #CR{
 	height:175px;
@@ -173,10 +186,14 @@ h2#hashtag{
 }
 
 #CR-nav{
-	height:70px;
+	height:80px;
 	width:auto;
-	margin: 0px 10px 12px 0px;
+	margin: 0px 30px 20px 0px;
 	padding:0px;
+}
+
+#nav-logo{
+	margin-top: 8px;
 }
 
 #italics{
@@ -257,7 +274,7 @@ h1{
 
 .display-4{
 	padding-bottom: 30px;
-	padding-top:60px;
+	padding-top:100px;
 	margin-bottom: 10px;
 	font-size: 60;
 	position:center

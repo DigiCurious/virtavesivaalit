@@ -13,14 +13,12 @@ block content
 	nav.navbar.navbar-default.center.navbar-fixed-top
 		.container-fluid
 			.navbar-header
-				button.navbar-toggle.collapsed(type="collapse" data-toggle="collapse" target="#bs-example-navbar-collapse-1" aria-expanded="false")
-					span.sr-only Toggle navigation
-					span.icon-bar
-					span.icon-bar
-					span.icon-bar
+				ul.nav.navbar-nav
+						li
+							a(href="#etusivu") Virtavesivaalit.fi<br><span id="header_font">Eduskuntavaalit 2019</span>
 			.collapse.navbar-collapse#bs-example-navbar-collapse-1
 				.navbar-inner
-					ul.nav.navbar-nav
+					ul#center.nav.navbar-nav
 						li#nav
 							a(href="#etusivu") Virtavesivaalit.fi
 						li#nav
@@ -29,7 +27,7 @@ block content
 							a(href="#ehdokkaatt") Ehdokkaat
 						li
 							a(href="#leffa") Concrete Reasons
-					ul.nav.navbar-nav.navbar-right
+					ul#nav-logo.nav.navbar-nav.navbar-right
 						li#nav-logo
 								img#CR-nav(src="../images/logo_white.png")
 
