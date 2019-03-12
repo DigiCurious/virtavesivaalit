@@ -254,7 +254,7 @@ textarea.form-control.register{
 #profiili2{
 	height: 200px;
  	width: 200px;
- 	margin: 50px 0px 0px 0px;
+ 	margin: 100px 0px 0px 0px;
  	border-radius: 100px;
 }
 
@@ -278,6 +278,10 @@ h1{
 	margin-bottom: 10px;
 	font-size: 60;
 	position:center
+}
+
+#ehdokasnimi{
+	padding-top: 40px;
 }
 
 .row{
