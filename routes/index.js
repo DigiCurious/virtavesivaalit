@@ -14,7 +14,12 @@ router.post('/', function(req,res){
 	res.redirect("/" + puolue + vaalipiiri + "#ehdokkaatt");
 })
 
-router.get('/', function(req, res) {
+
+router.get('/', function(req,res){
+  res.render('kiitos');
+})
+
+router.get('/etusivu2503', function(req, res) {
   
   function isEmpty(obj) {
     for(var key in obj) {
